@@ -8,7 +8,10 @@
     <div class="content">
         <div class="title mx-auto ">
         <b><h2>My Students</h2></b>
-        </div>    
+        </div><br />    
+        <div class="text m-b-md">You can 
+            <a href="{{ route('students.create') }}"><button> Create new student</button><br><br>Or choose one from the list</a>  
+        </div>
         <!-- ovo je message kad napravish novog studenta -->
         <p class="mssg">{{ session('mssg')}}</p>
 
