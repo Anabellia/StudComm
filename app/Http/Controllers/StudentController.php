@@ -49,6 +49,9 @@ class StudentController extends Controller
         $student->gender =request('gender', "Others");
         $student->categories =request('categories');
 
+        //huh probam sad slider
+        $student->Introduction =request('Introduction');
+
         $student->save();
         //dd ($student);
         // add mssge  to the user about new student creation aftr ->

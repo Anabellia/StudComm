@@ -10,7 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles ovde cu da link ono sto sam cut u css file (video 8)-->
-        <link href="/css/main.css" rel="stylesheet">
+        <!-- <link href="/css/main.css" rel="stylesheet"> -->
+
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     </head>
     <body class="antialiased">

@@ -34,6 +34,10 @@
                             
                             <img src="\img\SuperheroTeacher1.png" alt="teacher logo>"
 
+                            <div>
+                                @include('/range')
+                            </div>
+
                             
                          </div><!-- dovde -->                                      
                    <div class="flex justify-center mt-4 sm:items-center sm:justify-between">

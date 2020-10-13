@@ -34,6 +34,8 @@
         <a href="/students" class="btnStack">Back to all students</a><br>
         <a href="/students"><button>&lt; &lt; Back to all students</button></a>            
     </div>   
+
+    
     
     
 </div>

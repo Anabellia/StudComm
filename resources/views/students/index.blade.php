@@ -10,7 +10,7 @@
         <b><h2>My Students</h2></b>
         </div><br />    
         <div class="text m-b-md">You can 
-            <a href="{{ route('students.create') }}"><button> Create new student</button><br><br>Or choose one from the list</a>  
+            <a href="{{ route('students.create') }}"><button> Create new student</button></a> <br><br>Or choose one from the list
         </div>
         <!-- ovo je message kad napravish novog studenta -->
         <p class="mssg">{{ session('mssg')}}</p>
@@ -18,10 +18,11 @@
         <div class="wrapper student-index">
             @foreach($students as $student)     
                 <div>
-                    <a href="/students/{{$student->id}}"><b>{{$student->name}} </b><br></a>
-                    <br>      
+                    <a href="/students/{{$student->id}}"><b>{{$student->name}} </b></a>
+                          
                 </div>
             @endforeach
+
         </div>    
     </div
 </div>

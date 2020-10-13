@@ -26,3 +26,7 @@ Route::delete('/students/{id}', 'App\Http\Controllers\StudentController@destroy'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/range', function () {
+    return view('/range');
+});

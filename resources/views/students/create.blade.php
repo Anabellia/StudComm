@@ -1,6 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
+<!--     aaaaa -->
+    <script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('jquery-ui.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
+
+
+	<script>
+		$( function() {
+			$( "#slider-range-max" ).slider({
+			range: "max",
+			min: 0,
+			max: 5,
+			//defoult
+			value: 2,
+			slide: function( event, ui ) {
+				$( "#amount" ).val( ui.value );
+			}
+			});
+			$( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+		} );
+	</script>
+   
+
+<!--     aaaaa -->
+
+
+
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
 
     
@@ -10,6 +40,12 @@
         <h1>Create new student</h1>
         <form action="/students" method="POST">
             @csrf
+            
+            <!-- slider -->
+            <div id="slider-range-max"></div>
+            <input type="text" id="amount" name="Introduction" value="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+
+
             <!-- name of the student -->
             <label for="name">Student name:</label>
             <input type="text" id="name" name="name"></input>
@@ -66,6 +102,8 @@
             <input type="checkbox" name="categories[]" value="Subject">Subject<br />
             <input type="checkbox" name="categories[]" value="Conclusion ">Conclusion <br />           
             </fieldset>
+
+
 
 
             <!-- submit button -->
