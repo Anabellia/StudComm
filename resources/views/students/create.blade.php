@@ -67,6 +67,18 @@
             <input type="checkbox" name="categories[]" value="Conclusion ">Conclusion <br />           
             </fieldset>
 
+<!-- petljaus 
+                            
+                  <p><label for="amount">Grade your student knowlege (1-5):</label>
+                  <input type="text" id="amount" name="grade_slider"> </p> 
+               
+                <div id="slider"></div>
+
+                <button onclick="send()">Click me</button>
+
+                
+ end of petljaus -->
+
 
             <!-- submit button -->
             <input type="submit" value="Submit new student">
