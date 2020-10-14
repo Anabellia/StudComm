@@ -47,10 +47,18 @@ class StudentController extends Controller
         $student->about_student =request('about_student', "");
         $student->used_comments ="";
         $student->gender =request('gender', "Others");
-        $student->categories =request('categories');
+        //$student->categories =request('categories');
 
         //huh probam sad slider
         $student->Introduction =request('Introduction');
+        $student->Behavior =request('Behavior');
+        $student->Speaking =request('Speaking');
+        $student->Reading =request('Reading');
+        $student->Writing =request('Writing');
+        $student->Listening =request('Listening');
+        $student->Comprehension =request('Comprehension');
+        $student->Subject =request('Subject');
+        $student->Conclusion =request('Conclusion');
 
         $student->save();
         //dd ($student);
