@@ -35,25 +35,25 @@
     <!-- ja pobriso defoult gluposti i dodao samo ovo -->
     <div class="wrapper create-students">
     
-        <h1>Create new student</h1>
-        <form action="/students" method="POST">
+        <h1>Edit student</h1>
+        <form action="/students/{{$student->id}}" method="POST">
             @csrf           
-
+            @method('PATCH')
             <!-- name of the student -->
-            <label for="name">Student name:</label>
-            <input type="text" id="name" name="name"></input>
+            <label for="name" >Student name:</label>
+            <input type="text" id="name" name="name" value="{{$student->name}}"></input>
             <br>
-
+            <p>{{$student->gender}}</p>
             <!--radiobutton -->
             <div id="gender-group" class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                    <label for="gender" class="col-md-4 control-label">Gender: </label>
-                            <div class="col-md-6">
-                                <input id="female" type="radio" name="gender" value="Female" {{ (old('sex') == 'female') ? 'checked' : '' }} > Female
-                                <input id="male" type="radio" name="gender" value="Male" {{ (old('sex') == 'male') ? 'checked' : '' }} > Male
-                                <input id="other" type="radio" name="gender" value="Others" {{ (old('sex') == 'other') ? 'checked' : '' }} > Other
+                        <label for="gender" class="col-md-4 control-label">Gender: </label>
+                            <div class="col-md-6">                
+                                <input id="female" type="radio" name="gender" value="Female" {{$student->gender == 'Female' ? 'checked' : ''}}> Female
+                                <input id="male" type="radio" name="gender" value="Male" {{$student->gender == 'Male' ? 'checked' :''}} > Male
+                                <input id="other" type="radio" name="gender" value="Others" {{$student->gender == 'Others' ? 'checked' : ''}}> Other
                                                 @if ($errors->has('gender'))
                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('gender') }}</strong>
+                                                        <strong>{{ $errors->first('gender') }}</strong>
                                                     </span>
                                                 @endif
                             </div>
@@ -90,23 +90,9 @@
             <label for="about_student">Add some notes about this student(optional):</label>
             <input type="text" id="about_student" name="about_student"></input>
             <br>
-            
-            <!-- categories -->
-            <!-- <fieldset>
-            <label>Categories</label><br />            
-            <input type="checkbox" name="categories[]" value="Introduction">Introduction<br />
-            <input type="checkbox" name="categories[]" value="Behavior">Behavior<br />
-            <input type="checkbox" name="categories[]" value="Speaking">Speaking<br />
-            <input type="checkbox" name="categories[]" value="Reading">Reading<br />
-            <input type="checkbox" name="categories[]" value="Writing">Writing<br />
-            <input type="checkbox" name="categories[]" value="Listening">Listening<br />
-            <input type="checkbox" name="categories[]" value="Comprehension">Comprehension<br />
-            <input type="checkbox" name="categories[]" value="Subject">Subject<br />
-            <input type="checkbox" name="categories[]" value="Conclusion ">Conclusion <br />           
-            </fieldset> -->
 
             <!-- submit button -->
-            <input type="submit" value="Submit new student">
+            <input type="submit" value="Edit student">
         </form>
 
     </div>

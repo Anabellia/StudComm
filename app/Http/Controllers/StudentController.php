@@ -66,6 +66,34 @@ class StudentController extends Controller
         return redirect('/students')->with('mssg', 'NOTES! You add a new student into your students list - '.$student->name);
     }
 
+    public function edit($id){
+        $student  = Student::find($id);        
+        return view('students.edit', ['student' => $student]);
+    }
+
+    public function update($id){
+        /* dd($id); */
+
+        $student  = Student::find($id); 
+
+        $student->name =request('name', "");
+        $student->gender =request('gender');
+        $student->Introduction =request('Introduction');
+
+        $student->update();
+
+        return redirect('/students');
+
+
+    }
+
+    //NA UPDATE RECORDS RADIM SAD
+    /* public function update($id){
+        $student  = Student::find($id);
+        Student::update($student->name =request('name', ""));
+        return view('/students/2');
+    } */
+
     public function destroy($id){
         $students = Student::findOrFail($id);
         $students->delete();
