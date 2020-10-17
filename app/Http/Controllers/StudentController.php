@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 
+
+
 class StudentController extends Controller
 {
     public function __construct(){
@@ -24,16 +26,23 @@ class StudentController extends Controller
 
     public function show($id){
         $student  = Student::find($id);
-        //dd ($student);
+        //ovo ce valjda da include moje php scripte ???
+        //include(app_path() . '\Fabrika\testing.php');
+        //include('App\Fabrika\testing.php');
+        //dd ($files1);
         if(!$student)
             return redirect('/students');
         elseif ($student->teacher_id == (auth()->user()->id))
-            return view('students.show', ['student' => $student]);
+            include(app_path() . '\Fabrika\testing.php');
+            
+            return view('students.show', ['student' => $student, $price]);
         else
             return redirect('/students');            
     }
 
-    public function create(){
+    
+
+    public function create(){        
        
         return view('students.create');
     }
@@ -90,24 +99,22 @@ class StudentController extends Controller
         $student->Subject =request('Subject');
         $student->Conclusion =request('Conclusion');
 
+        
+
 
         $student->update();
+
+        
 
         return redirect('/students');
 
 
     }
-
-    //NA UPDATE RECORDS RADIM SAD
-    /* public function update($id){
-        $student  = Student::find($id);
-        Student::update($student->name =request('name', ""));
-        return view('/students/2');
-    } */
 
     public function destroy($id){
         $students = Student::findOrFail($id);
         $students->delete();
         return redirect('/students');
     }
+    
 }
