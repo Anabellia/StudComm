@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+include(app_path() . '\Fabrika\testing.php');
 
 
 
@@ -32,9 +33,7 @@ class StudentController extends Controller
         //dd ($files1);
         if(!$student)
             return redirect('/students');
-        elseif ($student->teacher_id == (auth()->user()->id))
-            include(app_path() . '\Fabrika\testing.php');
-            
+        elseif ($student->teacher_id == (auth()->user()->id))        
             return view('students.show', ['student' => $student, $price]);
         else
             return redirect('/students');            
