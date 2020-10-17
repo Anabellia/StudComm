@@ -82,6 +82,13 @@ class StudentController extends Controller
 
         $student->Introduction =request('Introduction');
         $student->Behavior =request('Behavior');
+        $student->Speaking =request('Speaking');
+        $student->Reading =request('Reading');
+        $student->Writing =request('Writing');
+        $student->Listening =request('Listening');
+        $student->Comprehension =request('Comprehension');
+        $student->Subject =request('Subject');
+        $student->Conclusion =request('Conclusion');
 
 
         $student->update();
