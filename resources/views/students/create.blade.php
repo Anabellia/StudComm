@@ -86,10 +86,10 @@
             </select>
             <br>
             <!-- about student - about_student -->
-            <br>
+            <!-- <br>
             <label for="about_student">Add some notes about this student(optional):</label>
             <input type="text" id="about_student" name="about_student"></input>
-            <br>
+            <br> -->
             
             <!-- categories -->
             <!-- <fieldset>

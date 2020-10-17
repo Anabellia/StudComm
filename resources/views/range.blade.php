@@ -42,15 +42,15 @@
     <div id="slider-range-max1"></div>  
 
 
-	           	<!-- slider  for Speaking-->
+<!-- slider  for Speaking-->
 <script>
-		( function() {
+	$( function() {
 		$( "#Speaking-max" ).slider({
 		range: "max",
 		min: 0,
 		max: 5,
 		//defoult
-		value: {{$student->Speaking ?? ''}},
+		value: 2,
 		slide: function( event, ui ) {
 			$( "#Speaking" ).val( ui.value );
 		}
