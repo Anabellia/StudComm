@@ -6,6 +6,19 @@
     
     <!-- ja pobriso defoult gluposti i dodao samo ovo -->
     <div class="wrapper student-details">    
+
+
+            <!-- NA UPDATE RECORDS RADIM SAD -->
+            <!-- <h3><div>
+            <form action="update" method="POST">
+            @csrf
+            <input type="text" value="{{$student->name}}" name="name">
+            <button type="submit"> Update</button>
+            </form></h3> -->
+
+          
+
+
         <h1><b>Student:</b> {{$student->name}}</h1>
         <p class="used"><b>Used comments so far:</b> {{$student->used_comments}}</p>
         <p class="about_student"><b>about:</b> {{$student->about_student}}</p>
@@ -28,12 +41,17 @@
         @csrf 
         @method('DELETE')
         <button>delete student</button>
-        </form>
+        <br />
+        <br />
+        </form><a href="/students/{{$student->id}}/edit"><button>Edit student</button></a> 
+        <br />
         <br />
         <!-- back button -->
         <a href="/students" class="btnStack">Back to all students</a><br>
         <a href="/students"><button>&lt; &lt; Back to all students</button></a>            
     </div>   
+
+    
     
     
 </div>

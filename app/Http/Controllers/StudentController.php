@@ -47,13 +47,56 @@ class StudentController extends Controller
         $student->about_student =request('about_student', "");
         $student->used_comments ="";
         $student->gender =request('gender', "Others");
-        $student->categories =request('categories');
+        //$student->categories =request('categories');
+
+        //huh probam sad slider
+        $student->Introduction =request('Introduction');
+        $student->Behavior =request('Behavior');
+        $student->Speaking =request('Speaking');
+        $student->Reading =request('Reading');
+        $student->Writing =request('Writing');
+        $student->Listening =request('Listening');
+        $student->Comprehension =request('Comprehension');
+        $student->Subject =request('Subject');
+        $student->Conclusion =request('Conclusion');
 
         $student->save();
         //dd ($student);
         // add mssge  to the user about new student creation aftr ->
         return redirect('/students')->with('mssg', 'NOTES! You add a new student into your students list - '.$student->name);
     }
+
+    public function edit($id){
+        $student  = Student::find($id);        
+        return view('students.edit', ['student' => $student]);
+    }
+
+    public function update($id){
+        /* dd($id); */
+
+        $student  = Student::find($id); 
+
+        $student->name =request('name', "");
+        $student->gender =request('gender');
+        $student->about_student =request('about_student', "");
+
+        $student->Introduction =request('Introduction');
+        $student->Behavior =request('Behavior');
+
+
+        $student->update();
+
+        return redirect('/students');
+
+
+    }
+
+    //NA UPDATE RECORDS RADIM SAD
+    /* public function update($id){
+        $student  = Student::find($id);
+        Student::update($student->name =request('name', ""));
+        return view('/students/2');
+    } */
 
     public function destroy($id){
         $students = Student::findOrFail($id);
