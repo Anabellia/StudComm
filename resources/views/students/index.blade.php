@@ -12,7 +12,7 @@
         <b><h2>My Students</h2></b>
         
         </div>
-        <div><p>{{ $jabe}}</p></div>
+        
         
         <br />    
         <div class="text m-b-md">You can 
@@ -21,6 +21,9 @@
         </div>
         <!-- ovo je message kad napravish novog studenta -->
         <p class="mssg">{{ session('mssg')}}</p>
+
+        <div><p>{{$konj}}</p></div>
+
 
         <div class="wrapper student-index">
             @foreach($students as $student)     

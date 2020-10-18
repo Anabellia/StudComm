@@ -1,7 +1,7 @@
 <?php
+    function hello(){
+        $gg = 666;
+        return($gg);
 
-  function hello(){
-    return ('>> ovo je iz mog filea from Fabrika: Hello world');
-  }
-  
+    }
 ?>

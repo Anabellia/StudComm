@@ -46,7 +46,11 @@
 
             <!-- submit button -->
             <input type="submit" value="Edit student">
+
+            
         </form>
+
+        
 
     </div>
 

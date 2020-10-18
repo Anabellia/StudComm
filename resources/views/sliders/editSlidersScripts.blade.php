@@ -1,30 +1,28 @@
 <!--     aaaaa -->
-<script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
+	<script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('jquery-ui.min.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
 
-                	<!-- slider 0 GRADE IN GENERAL -->
-	
-            <script>
-            			$( function() {
-            				$( "#GRADE-max" ).slider({
-            				range: "max",
-            				min: 0,
-            				max: 5,
-            				//defoult
-            				value: {{$student->grade}},
-            				slide: function( event, ui ) {
-            					$( "#grade" ).val( ui.value );
-            				}
-            				});
-            				$( "#grade" ).val( $( "#GRADE-max" ).slider( "value" ) );
-            			} );
-            </script>
+                	<!-- slider 0 GRADE in general -->
+				<script>
+		        $( function() {
+		        	$( "#GRADE-max" ).slider({
+		        	range: "max",
+		        	min: 0,
+		        	max: 5,
+		        	//defoult
+		        	value: {{$student->grade}},
+		        	slide: function( event, ui ) {
+		        		$( "#grade" ).val( ui.value );
+		        	}
+		        	});
+		        	$( "#grade" ).val( $( "#GRADE-max" ).slider( "value" ) );
+		        } );
+	        </script>	
                     
             	<!--######################################################################-->	
-
 	
-               <!-- slider -->
+               <!-- Introduction -->
                <script>
 		        $( function() {
 		        	$( "#Introduction-max" ).slider({
@@ -59,7 +57,7 @@
 		        } );
 	        </script>           
 
-                			<!--######################################################################-->	
+<!--######################################################################-->	
 
 
 <!-- slider  for Speaking-->

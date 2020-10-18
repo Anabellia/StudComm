@@ -16,7 +16,7 @@
 			} );
 </script>
 
-			<div><label for="amount">GRADE your student in general from 1-5:</label>			 
+			<div><label for="grade">GRADE your student in general from 1-5:</label>			 
     		<input type="text" id="grade" name="grade" value="grade" readonly style="border:0; color:#f6931f; font-weight:bold;"></div>
     		<div id="GRADE-max"></div>
 

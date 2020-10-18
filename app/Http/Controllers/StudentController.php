@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+include(app_path().'/Fabrika/testing.php');
 
 
 
@@ -18,15 +19,14 @@ class StudentController extends Controller
         //$students = Student::all();
         //$students = Student::where('grade', 4)->get();
         //$students = Student::latest()->get(); 
-        
-
-        include(app_path().'/Fabrika/testing.php');
-        $ja = hello();//'>> ovo shaljem iz cntrollera';
-
+        $konj = hello();
         //ovo ispod sam ja spetljao da samo svoje studente vidi
-        $students = Student::where('teacher_id', (auth()->user()->id))->get();            
-        
-        return view('students.index', ['students' => $students, 'jabe' => $ja]);
+        $students = Student::where('teacher_id', (auth()->user()->id))->get();  
+
+        return view('students.index', ['students' => $students, 'konj' => $konj]);
+        //ovo dole je old i radilo je ok
+        //return view('students.index', ['students' => $students]);
+       
 
     }
 
@@ -85,14 +85,14 @@ class StudentController extends Controller
     }
 
     public function update($id){
-        /* dd($id); */
+
 
         $student  = Student::find($id); 
 
         $student->name =request('name', "");
         $student->gender =request('gender');
         $student->about_student =request('about_student', "");
-
+        $student->grade =request('grade');
         $student->Introduction =request('Introduction');
         $student->Behavior =request('Behavior');
         $student->Speaking =request('Speaking');
@@ -101,17 +101,12 @@ class StudentController extends Controller
         $student->Listening =request('Listening');
         $student->Comprehension =request('Comprehension');
         $student->Subject =request('Subject');
-        $student->Conclusion =request('Conclusion');
-
-        
-
+        $student->Conclusion =request('Conclusion');  
 
         $student->update();
 
-        
-
-        return redirect('/students');
-
+        return redirect('/students')->with('mssg', 'NOTES! You Edited: '.$student->name);
+        //return redirect()->back();
 
     }
 
