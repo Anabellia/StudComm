@@ -5,11 +5,18 @@
     
     
     <!-- ja pobriso defoult gluposti i dodao samo ovo -->
+    
+    
     <div class="content">
         <div class="title mx-auto ">
         <b><h2>My Students</h2></b>
-        </div><br />    
+        
+        </div>
+        <div><p>{{ $jabe}}</p></div>
+        
+        <br />    
         <div class="text m-b-md">You can 
+        
             <a href="{{ route('students.create') }}"><button> Create new student</button></a> <br><br>Or choose one from the list
         </div>
         <!-- ovo je message kad napravish novog studenta -->

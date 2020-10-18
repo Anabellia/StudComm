@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-include(app_path() . '\Fabrika\testing.php');
+
 
 
 
@@ -18,10 +18,15 @@ class StudentController extends Controller
         //$students = Student::all();
         //$students = Student::where('grade', 4)->get();
         //$students = Student::latest()->get(); 
-        //ovo ispod sam ja spetljao da samo svoje studente vidi
-        $students = Student::where('teacher_id', (auth()->user()->id))->get();             
         
-        return view('students.index', ['students' => $students]);
+
+        include(app_path().'/Fabrika/testing.php');
+        $ja = hello();//'>> ovo shaljem iz cntrollera';
+
+        //ovo ispod sam ja spetljao da samo svoje studente vidi
+        $students = Student::where('teacher_id', (auth()->user()->id))->get();            
+        
+        return view('students.index', ['students' => $students, 'jabe' => $ja]);
 
     }
 
@@ -34,7 +39,7 @@ class StudentController extends Controller
         if(!$student)
             return redirect('/students');
         elseif ($student->teacher_id == (auth()->user()->id))        
-            return view('students.show', ['student' => $student, $price]);
+            return view('students.show', ['student' => $student]);
         else
             return redirect('/students');            
     }

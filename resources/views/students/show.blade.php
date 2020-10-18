@@ -19,7 +19,7 @@
           
 
 
-        <h1><b>Student:</b> {{$student->name}}{{$price}}</h1>
+        <h1><b>Student:</b> {{$student->name}}</h1>
         <p class="used"><b>Used comments so far:</b> {{$student->used_comments}}</p>
         <p class="about_student"><b>about:</b> {{$student->about_student}}</p>
         <p class="gender"><b>gender:</b> {{$student->gender}}</p>
@@ -50,6 +50,8 @@
         <a href="/students" class="btnStack">Back to all students</a><br>
         <a href="/students"><button>&lt; &lt; Back to all students</button></a>            
     </div>   
+
+    
 
     
     
