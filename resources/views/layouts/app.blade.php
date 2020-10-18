@@ -28,7 +28,7 @@
 <!--     <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
     <script src="{{ asset('jquery.js') }}"></script>
     <script src="{{ asset('jquery-ui.min.js') }}"></script> -->
-
+@livewireStyles
 </head>
 <body>
     <div id="app">
@@ -87,5 +87,6 @@
             @yield('content')
         </main>
     </div>
+@livewireScripts
 </body>
 </html>

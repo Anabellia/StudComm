@@ -23,6 +23,7 @@
         <p class="mssg">{{ session('mssg')}}</p>
 
         <div><p>{{$konj}}</p></div>
+        
 
 
         <div class="wrapper student-index">
