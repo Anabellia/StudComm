@@ -28,8 +28,10 @@
                             <div class="title m-b-md">
                                 Anabella help teachers
                             </div>
-                            <div class="text m-b-md">Make more money  
-                            <a href="{{ route('students.create') }}"><button>&gt; &gt; &gt; Create new student</button></a>  
+                            <div class="text m-b-md">Make more money  </div>
+                            <div> 
+                                <a href="{{ route('students.create') }}"><button>&gt; &gt; &gt; Create new student</button></a><br>
+                                <a href="{{ route('students.index') }}"><button>&gt; &gt; &gt; Go to your student list</button></a>
                             </div>
                             
                             <img src="\img\SuperheroTeacher1.png" alt="teacher logo>"
