@@ -16,18 +16,11 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- opet probam -->
-   <!--  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  -->
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- ovo sam kopirao iz pizza -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-
-    <!-- opet probam jquery -->
-<!--     <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
-    <script src="{{ asset('jquery.js') }}"></script>
-    <script src="{{ asset('jquery-ui.min.js') }}"></script> -->
+    
 @livewireStyles
 </head>
 <body>

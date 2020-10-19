@@ -45,13 +45,13 @@
             <br>
 
             <!--radiobutton -->
-            <div id="gender-group" class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                    <label for="gender" class="col-md-4 control-label">Gender: </label>
-                            <div class="col-md-6">
-                                <input id="female" type="radio" name="gender" value="Female"> Female
+            <!-- <div id="gender-group" class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}"> -->
+                    <label for="gender" class="col-md-2 control-label">Gender: </label>
+                            <!-- <div class="col-md-6"> -->
+                                <input id="female" type="radio" name="gender" value="Female"> Female 
                                 <input id="male" type="radio" name="gender" value="Male"> Male
-                                <input id="other" type="radio" name="gender" value="Others"> Other
-                                                @if ($errors->has('gender'))
+                                <!-- <input id="other" type="radio" name="gender" value="Others"> Other -->
+                                               <!--  @if ($errors->has('gender'))
                                                     <span class="help-block">
                                                     <strong>{{ $errors->first('gender') }}</strong>
                                                     </span>
@@ -59,7 +59,7 @@
                             </div>
                         
             </div>
-            
+             -->
             <!--OVDE IMPORTING RANGE BLADE SA SLIDERIMA -->
             <div>
                 @include('sliders.range')
