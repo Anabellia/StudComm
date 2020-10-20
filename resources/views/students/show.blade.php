@@ -7,20 +7,10 @@
     <!-- ja pobriso defoult gluposti i dodao samo ovo -->
     <div class="wrapper student-details">    
 
-
-            <!-- NA UPDATE RECORDS RADIM SAD -->
-            <!-- <h3><div>
-            <form action="update" method="POST">
-            @csrf
-            <input type="text" value="{{$student->name}}" name="name">
-            <button type="submit"> Update</button>
-            </form></h3> -->
-
-          
-
-
         <h1><b>Student:</b> {{$student->name}}</h1>
-        <livewire:comment />
+
+        <!-- LIVEWIRE OVDE AKO GA NE PRIMECUJES!!!! -->
+        @livewire('comment', ['name' => 'Djoka']) 
         <p class="used"><b>Used comments so far:</b> {{$student->used_comments}}</p>
         <p class="about_student"><b>about:</b> {{$student->about_student}}</p>
         <p class="gender"><b>gender:</b> {{$student->gender}}</p>
