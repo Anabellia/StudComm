@@ -105,8 +105,9 @@ class StudentController extends Controller
 
         $student->update();
 
-        return redirect('/students')->with('mssg', 'NOTES! You Edited: '.$student->name);
-        //return redirect()->back();
+        //ovo ispod je bilo defoult pa sam hteo da ostanem na edit page zato jer tamo cu comment
+        //return redirect('/students')->with('mssg', 'NOTES! You Edited: '.$student->name);
+        return redirect()->back();
 
     }
 

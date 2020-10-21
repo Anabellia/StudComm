@@ -34,6 +34,8 @@ Route::patch('/students/{id}', 'App\Http\Controllers\StudentController@update');
 
 
 
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
