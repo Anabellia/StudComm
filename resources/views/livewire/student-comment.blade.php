@@ -1,6 +1,10 @@
 <div>
     hello {{$student->name}}
 
+    @foreach($comment as $com)
+        {{$com->grade2}}
+    @endforeach
+
 
 
 <!-- ovo dole sam cut iz edit -->
