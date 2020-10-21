@@ -1,9 +1,7 @@
 <div>
-    hello {{$student->name}}
+    hello {{$student->name}}<br>
 
-    @foreach($comment as $com)
-        {{$com->grade2}}
-    @endforeach
+    hey be evo mene randoma iz db he he: {{$comment->grade3}}
 
 
 
