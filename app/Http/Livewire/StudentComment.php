@@ -8,7 +8,8 @@ use Livewire\Component;
 class StudentComment extends Component
 {
 
-    public $student; 
+    public $student;
+    public $comment; 
 
 
     public function render(){

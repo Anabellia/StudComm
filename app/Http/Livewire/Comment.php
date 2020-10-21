@@ -8,9 +8,9 @@ class Comment extends Component
 {
     //ova mala increment func(method) je iz onog yt tutsa kratkog
     public function increment(){
-        $this->comment++;
+        $this->commentG++;
     }
-    public $comment = 0;
+    public $commentG = 0;
 
 
     /* ovo je sa livewire sitea */

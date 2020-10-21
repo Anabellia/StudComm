@@ -2,6 +2,7 @@
     hello {{$student->name}}
 
 
+
 <!-- ovo dole sam cut iz edit -->
     @include('sliders.editSlidersScripts')
 
