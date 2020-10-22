@@ -4,7 +4,7 @@
         <h1>{{ $commentG }}</h1>
     </div>
 
-    <p style="color:red;"> {{implode(", ", $tipla)}} {{$name}} {{$greeting}} @if($loud) !!! @endif</p>
+    <p style=@if($IntroductionZZ == true) "color:red;" @endif> {{implode(", ", $tipla)}} {{$name}} {{$greeting}} @if($loud == true) !!!!! @endif</p>
 
     
         <!-- Ovo dole je od novog tutsa sa official livewire site -->
@@ -16,6 +16,9 @@
         <!-- ovo je da dodamo znake uzvika !!! -->
         Its a checkbox for loud-> 
         <input wire:model="loud" type="checkbox"><br /><br />
+
+       ako je select text je crven
+        <input wire:model="IntroductionZZ" type="checkbox"><br><br>
 
         <!-- Select one of those to be displajed after name-->
         <select wire:model="greeting">

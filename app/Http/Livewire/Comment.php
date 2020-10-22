@@ -14,6 +14,9 @@ class Comment extends Component
 
 
     /* ovo je sa livewire sitea */
+
+
+    public $IntroductionZZ = true;
     public $name ='Jelly22';
     public $loud = false;
     public $greeting = 'H-E-L-L-O';

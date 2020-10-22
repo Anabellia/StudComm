@@ -1,14 +1,43 @@
            <!-- slider 0 GRADE IN GENERAL -->
            <div><label for="grade">GRADE your student in general from 1-5:</label>			 
     		<input type="text" id="grade" name="grade" value="grade" readonly style="border:0; color:#1ff693; font-weight:bold;"></div>
-    		<div id="GRADE-max"></div>
+    		<div id="GRADE-max"></div><br>
 
 <!--######################################################################-->	
 
+
+
+                <div style="margin-top: 50px"></div>
+
+                <div>
+                  <div id="slider">
+                    <input type="checkbox">
+                  </div>
+                </div>
+
+
+
+
+
+<!--######################################################################-->	
+
+
+
+
+
+
                     <!--(label=for AHA input=id) -->
-            <div><label for="Introduction">Introduction(from 1-5): </label>
-            <input type="text" id="Introduction" name="Introduction" value="Introduction" readonly style="border:0; color:#f6931f; font-weight:bold;"></div>
-            <div id="Introduction-max"></div>  
+
+                    
+                <div>
+                
+                    <label for="Introduction">Introduction(from 1-5): </label>
+                    
+                        <input type="text" id="Introduction" name="Introduction" value="Introduction" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </div>
+            
+                <div id="Introduction-max"></div>  
+                
              
 <!--######################################################################-->	   
 
