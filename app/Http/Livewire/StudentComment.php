@@ -12,6 +12,8 @@ class StudentComment extends Component
 
     public $student;
     public $comment; 
+    public $rangeSlider = 0;
+    public $rangeSlider1 = 0;
 
     public $IntroductionBox = true;
     
