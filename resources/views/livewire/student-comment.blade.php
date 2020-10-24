@@ -16,9 +16,16 @@
             <div class="wrapper create-students">
 
                 <h1>Edit student</h1>
+                
                 <form action="/students/{{$student->id}}" method="POST">
                     @csrf           
                     @method('PATCH')
+                    
+                    
+                    <a href="/students" class="btnStack">Back to all students</a>
+                    <!-- submit button -->
+                    <input type="submit" value="Edit student"> <br> <br><br>
+
                     <!-- name of the student -->
                     <label for="name" >Student name:</label>
                     <input type="text" id="name" name="name" value="{{$student->name}}"></input>
@@ -42,13 +49,12 @@
                         <br>
                     </div>
 
-                    <!-- submit button -->
-                    <input type="submit" value="Edit student">
+                    
                     
 
 
                 </form>
-                <a href="/students"><button>&lt; &lt; Back to all students</button></a> 
+                
 
 
 
