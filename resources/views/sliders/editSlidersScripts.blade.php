@@ -4,27 +4,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
 
 <!--######################################################################-->	
-	<script>
-	$(function() {
-    $( "#slider" ).slider({
-      min: 0,
-      max: 6,
-      animate : 'slow',
-      slide: function( event, ui ) {
-        if(ui.value > 0){
-          $("#slider input[type='checkbox']").prop("checked", false);
-        } else {
-          $("#slider input[type='checkbox']").prop("checked", true);
-        }
-      }
-    });
-  });
-  </script>
-<!--######################################################################-->	
-
-
-
-
 
 
                 	<!-- slider 0 GRADE in general -->

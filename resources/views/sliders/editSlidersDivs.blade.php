@@ -7,34 +7,6 @@
 
 
 
-                <div style="margin-top: 20px"></div>
-
-                <div>
-                  <div id="slider" class="mx-auto"><br>
-                    <input type="checkbox">
-                  </div>
-                </div><br>
-
-<!--######################################################################-->	
-
-<!--OVO VIDI NA POSO DA UBACISH SAMO GORE CIFRU KOJA RADI TO JEST JE NA SLIDERU
-KAO STO JE OVDE https://github.com/livewire/livewire/issues/964-->	
-<input type="range" min="0" max="5" step="1" value="2" wire:model="rangeSlider" />
-
-
-<!--######################################################################-->	
-
-<input type="range" list="tickmarks" wire:model="rangeSlider1">
-<datalist id="tickmarks">
-  <option value="1"></option>
-  <option value="2"></option>
-  <option value="3"></option>
-  <option value="4"></option>
-  <option value="5"></option>
-</datalist>
-
-
-
                     <!--(label=for AHA input=id) -->
 
                     
