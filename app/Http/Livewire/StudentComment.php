@@ -8,6 +8,7 @@ use App\Models\Comment;
 
 
 class StudentComment extends Component
+
 {
     public $student;
     public $comment;    
