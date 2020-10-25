@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Spintax extends Model
 
 {
+       
+    use HasFactory;
+    
+    
     public function setSeed($seed)
     {
         srand($seed);
     }
-    
+        
     public function process($text)
     {
         return preg_replace_callback(
@@ -21,13 +25,16 @@ class Spintax extends Model
             $text
         );
     }
-
-    public function replace($text)
-    {
-        $text = $this->process($text[1]);
-        $parts = explode('|', $text);
-        return $parts[array_rand($parts)];
-    }
     
-    use HasFactory;
+        public function replace($text)
+        {
+            $text = $this->process($text[1]);
+            $parts = explode('|', $text);
+            return $parts[array_rand($parts)];
+        }
+    
+    
 }
+        
+        
+
