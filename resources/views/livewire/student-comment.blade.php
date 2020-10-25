@@ -1,8 +1,16 @@
 <div>
     hello {{$student->name}}<br>
 
-    hey be evo mene randoma iz db he he: {{$comment->grade3}}
+    hey be evo mene randoma iz db he he: {{$comment->grade3}}<br>
 
+    <div style="text-align: center">
+        <button wire:click="increment">Probam coment spintax sad</button>
+        <h1>{{ $commentGGG }}</h1>
+    </div>
+
+
+    <!-- OVE "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
+    @push('scripts')
 
 
 <!-- ovo dole sam cut iz edit -->
@@ -37,8 +45,10 @@
                                         <label for="gender" class="col-md-2 control-label">Gender:  </label>                                           
                                             <input id="female" type="radio" name="gender" value="Female" {{$student->gender == 'Female' ? 'checked' : ''}}> Female
                                             <input id="male" type="radio" name="gender" value="Male" {{$student->gender == 'Male' ? 'checked' :''}} > Male
-
+                    
+                    
         			@include('sliders.editSlidersDivs')
+                    
 
                     <!-- about student - about_student -->
                     <br>
@@ -54,6 +64,9 @@
 
 
                 </form>
+                <!-- Gore imas prvi push "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
+                @endpush
+                <!-- i na kraju ovog blade filea pre /body taga imash @stack('scripts') koji refresh ceo page -->
                 
 
 

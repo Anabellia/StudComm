@@ -10,7 +10,7 @@
         <h1><b>Student:</b> {{$student->name}}</h1>
 
         <!-- LIVEWIRE OVDE AKO GA NE PRIMECUJES!!!! -->
-        @livewire('comment', ['name' => 'Persida']) 
+        @livewire('comment', ['name' => 'Persida'])  
         <p class="used"><b>Used comments so far:</b> {{$student->used_comments}}</p>
         <p class="about_student"><b>about:</b> {{$student->about_student}}</p>
         <p class="gender"><b>gender:</b> {{$student->gender}}</p>

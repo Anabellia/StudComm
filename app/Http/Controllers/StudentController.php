@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Spintax;
 include(app_path().'/Fabrika/testing.php');
 
 
@@ -43,7 +44,6 @@ class StudentController extends Controller
         else
             return redirect('/students');            
     }
-
     
 
     public function create(){        
@@ -51,10 +51,8 @@ class StudentController extends Controller
         return view('students.create');
     }
 
-    public function store(){    
+    public function store(){          
         
-        
-
         $student = new Student();
         $student->teacher_id = auth()->user()->id;
         $student->name =request('name', "");
@@ -106,9 +104,18 @@ class StudentController extends Controller
 
         $student->update();
 
+        
+        /* dd ($mazda); */
+
         //ovo ispod je bilo defoult pa sam hteo da ostanem na edit page zato jer tamo cu comment
         //return redirect('/students')->with('mssg', 'NOTES! You Edited: '.$student->name);
+
+        //opet probam da menjam ostavljam ovde ovaj koji radi kao bckup
         return redirect()->back();
+
+        //testing
+        //return view('students.edit')->with(['student' => $student, 'mazda' => $mazda]);
+        //return view('test')->with('bladeVar', $controllerVar);
         
 
     }

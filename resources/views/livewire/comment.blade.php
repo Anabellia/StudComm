@@ -1,6 +1,6 @@
  <div>
     <div style="text-align: center">
-        <button wire:click="increment">PLUS +</button>
+        <div><button wire:click="increment">PLUS +</button></div>
         <h1>{{ $commentG }}</h1>
     </div>
 
@@ -44,6 +44,8 @@
         <input wire:model="prezime" type="text">
 
         Hello {{$prezime}}
+
+        
     
     
     
