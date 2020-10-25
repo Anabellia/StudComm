@@ -66,7 +66,7 @@
                 </form>
                 <!-- Gore imas prvi push "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
                 @endpush
-                <!-- i na kraju ovog blade filea pre /body taga imash @stack('scripts') koji refresh ceo page -->
+                <!-- i na kraju ovog blade filea pre /body taga imash  @/stack/('/scripts/'/)koji refresh ceo page -->
                 
 
 
