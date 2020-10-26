@@ -10,14 +10,14 @@
                     <!--(label=for AHA input=id) -->
 
                     
-                <div>
+                <!-- <div>
                 
                     <label for="Introduction">Introduction(from 1-5): </label>
                     
                         <input type="text" id="Introduction" name="Introduction" value="Introduction" readonly style="border:0; color:#f6931f; font-weight:bold;">
                 </div>
             
-                <div id="Introduction-max"></div>  
+                <div id="Introduction-max"></div> -->  
                 
              
 <!--######################################################################-->	   

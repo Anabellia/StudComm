@@ -30,17 +30,24 @@ class StudentComment extends Component
 
     //ova mala increment func(method) je iz onog yt tutsa kratkog
     public function increment(){
-        $this->commentGGG++;
+        
+        $this->commentGGG=Comment::inRandomOrder()->first();
     }
-    public $commentGGG = 0;
+    public $commentGGG;
 
-     
+
+    public $Intro1;  
+
+    
+    
     public $student;
-    public $comment;    
+    public $comment1;    
+    public $comment2;
 
     public function render(){
         //$this->comment=Comment::all();
-        $this->comment=Comment::inRandomOrder()->first();
+        $this->comment1=Comment::inRandomOrder()->first();
+        $this->comment2=Comment::inRandomOrder()->first();
        
         //$this->comment=Comment::all()->random(1)->first();
         return view('livewire.student-comment');

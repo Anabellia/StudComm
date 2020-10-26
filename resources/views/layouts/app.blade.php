@@ -80,7 +80,7 @@
             @yield('content')
         </main>
     </div>
-    @stack('scripts')
+    
 @livewireScripts
 
 </body>

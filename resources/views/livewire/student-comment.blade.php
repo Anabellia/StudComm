@@ -1,16 +1,21 @@
 <div>
     hello {{$student->name}}<br>
 
-    hey be evo mene randoma iz db he he: {{$comment->grade3}}<br>
+    hey be evo mene randoma iz db he he ovo je rand iz grade 1: {{$comment1->grade1}}<br>
+
+    hey be evo mene randoma iz db he he ovo je rand iz grade 2: {{$comment2->grade2}}<br>
+    hey be evo mene randoma iz db he he ovo je rand iz grade 3: {{$comment2->grade3}}<br>
+    hey be evo mene randoma iz db he he ovo je rand iz grade 4: {{$comment2->grade4}}<br>
+    hey be evo mene randoma iz db he he ovo je rand iz grade 5: {{$comment2->grade5}}<br>
 
     <div style="text-align: center">
         <button wire:click="increment">Probam coment spintax sad</button>
-        <h1>{{ $commentGGG }}</h1>
+        <h1>{{$comment2->grade2}} ggrade:{{$student->grade}}</h1>
     </div>
 
 
     <!-- OVE "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
-    @push('scripts')
+    
 
 
 <!-- ovo dole sam cut iz edit -->
@@ -24,11 +29,19 @@
             <div class="wrapper create-students">
 
                 <h1>Edit student</h1>
+
+                
                 
                 <form action="/students/{{$student->id}}" method="POST">
                     @csrf           
                     @method('PATCH')
                     
+                    <!-- OPET JEBENO PROBAM WIRE SLIDER -->
+                    <div>
+                        <label for="Intro1" >Introduction: {{ $Intro1 }}</label>
+                        <div><input type="range" id="Intro1" name="Introduction" min="0" max="5" step="1" value="{{$student->Introduction}}" wire:range="Intro1" /><br></div>
+                    </div>
+                   
                     
                     <a href="/students" class="btnStack">Back to all students</a>
                     <!-- submit button -->
@@ -65,7 +78,7 @@
 
                 </form>
                 <!-- Gore imas prvi push "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
-                @endpush
+                
                 <!-- i na kraju ovog blade filea pre /body taga imash  @/stack/('/scripts/'/)koji refresh ceo page -->
                 
 

@@ -26,7 +26,7 @@
             	<!--######################################################################-->	
 	
                <!-- Introduction -->
-               <script>
+               <!-- <script>
 		        $( function() {
 		        	$( "#Introduction-max" ).slider({
 		        	range: "max",
@@ -40,7 +40,7 @@
 		        	});
 		        	$( "#Introduction" ).val( $( "#Introduction-max" ).slider( "value" ) );
 		        } );
-	        </script>
+	        </script> -->
 
 
                 <!-- slider moj petljaus (ovaj gore radi ok) -->
