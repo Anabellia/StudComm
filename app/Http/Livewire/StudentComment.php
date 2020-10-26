@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Livewire;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 use Livewire\Component;
 use App\Models\Student;
@@ -22,26 +24,27 @@ class StudentComment extends Component
 
     //$spintax = new Spintax();
     /* public $string = '{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!'; */
-    
-
-    
-    /* public $probam1 = process($string); */
 
 
     //ova mala increment func(method) je iz onog yt tutsa kratkog
-    public function increment(){
-        
+    public function increment(){        
         $this->commentGGG=Comment::inRandomOrder()->first();
     }
     public $commentGGG;
 
 
-    public $Intro1;
-    
+    public $Intro1;    
     public function mount(Student $student){
-
         $this->Intro1 = $student->Introduction;
     }
+
+    public $commentZZ;
+    public function newComment(){
+        $this->commentZZ=Comment::select('grade1')->inRandomOrder()->first();
+        
+        
+    }
+
 /*     public $newQty;
 
     public function updateqty($id)
@@ -50,10 +53,6 @@ class StudentComment extends Component
         $partqty->qty = $this->newQty;
         $partqty->save();
     } */
-    
-
-
-
 
     
     
