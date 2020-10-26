@@ -36,7 +36,24 @@ class StudentComment extends Component
     public $commentGGG;
 
 
-    public $Intro1;  
+    public $Intro1;
+    
+    public function mount(Student $student){
+
+        $this->Intro1 = $student->Introduction;
+    }
+/*     public $newQty;
+
+    public function updateqty($id)
+    {
+        $partqty = Mypart::findOrFail($id);
+        $partqty->qty = $this->newQty;
+        $partqty->save();
+    } */
+    
+
+
+
 
     
     

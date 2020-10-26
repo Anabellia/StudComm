@@ -37,11 +37,11 @@
                     @method('PATCH')
                     
                     <!-- OPET JEBENO PROBAM WIRE SLIDER -->
-                    <div>
-                        <label for="Intro1" >Introduction: {{ $Intro1 }}</label>
-                        <div><input type="range" id="Intro1" name="Introduction" min="0" max="5" step="1" value="{{$student->Introduction}}" wire:range="Intro1" /><br></div>
-                    </div>
-                   
+                    
+                        <label for="Intro1" >Introduction: {{$Intro1}}</label>
+                        <div><input type="range" name="Introduction" min="0" max="5" step="1" value="{{$student->Introduction}}" wire:model.debounce="Intro1" /></div><br>
+                    
+                    
                     
                     <a href="/students" class="btnStack">Back to all students</a>
                     <!-- submit button -->
