@@ -6,8 +6,9 @@
 
     <div style="text-align: center">
         <button wire:click="newComment({{$Intro1}})">Probam coment spintax sad</button>
-        <h1> ggrade| {{$Intro1}} |:{{$commentZZ}} </h1>
+        <h1> ggrade| {{$Intro1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }} </h1>
     </div>
+    <!-- <span class="Spintax">{{ (new App\Models\Spintax)->process($commentZZ) }}</span> -->
 
 
     <!-- OVE "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
