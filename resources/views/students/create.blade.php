@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <!--     aaaaa -->
     <script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('jquery-ui.min.js') }}"></script>
@@ -50,16 +52,10 @@
                             <!-- <div class="col-md-6"> -->
                                 <input id="female" type="radio" name="gender" value="Female"> Female 
                                 <input id="male" type="radio" name="gender" value="Male"> Male
-                                <!-- <input id="other" type="radio" name="gender" value="Others"> Other -->
-                                               <!--  @if ($errors->has('gender'))
-                                                    <span class="help-block">
-                                                    <strong>{{ $errors->first('gender') }}</strong>
-                                                    </span>
-                                                @endif
-                            </div>
-                        
-            </div>
-             -->
+                                
+
+
+            
             <!--OVDE IMPORTING RANGE BLADE SA SLIDERIMA -->
             <div>
                 @include('sliders.range')

@@ -27,35 +27,36 @@ class StudentComment extends Component
     public $commentGGG;
 
 
-    public $Intro1;    
+    public $grade1; 
+    public $intro1;  
+    public $beha1;    
+    public $speak1;
+    public $read1;
+    public $writ1;
+    public $list1;    
+    public $compr1;    
+    public $subj1;    
+    public $conc1;    
     public function mount(Student $student){
-        $this->Intro1 = $student->Introduction;
+        $this->grade1 = $student->grade;
+        $this->intro1 = $student->Introduction;
+        $this->beha1 = $student->Behavior;
+        $this->speak1 = $student->Speaking;
+        $this->read1 = $student->Reading;
+        $this->writ1 = $student->Writing;
+        $this->list1 = $student->Listening;
+        $this->compr1 = $student->Comprehension;
+        $this->subj1 = $student->Subject;
+        $this->conc1 = $student->Conclusion;
     }
-
-
-    protected $testText;
-
-    public function spinning(){
-
-        $swssw = '{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!';
-        $this->testText = new Spintax();
-        
-        $this->testText->process($swssw);
-        dd($this->testText);
-    }
-
 
     public $commentZZ;    
     
     public function newComment($gd){
         if ($gd == 0){  return $this->commentZZ = '';     }
         $gradeP = 'grade'.$gd;
-        $rukituki = Comment::inRandomOrder()->select($gradeP)->first();
-        
-       
-
-        /* json_decode($rukituki); */
-        /* dd($rukituki); */
+        $rukituki = Comment::inRandomOrder()->select($gradeP)->first();       
+ 
         if ($gd == 1){  return $this->commentZZ = $rukituki->grade1;    }
         if ($gd == 2){  return $this->commentZZ = $rukituki->grade2;    }
         if ($gd == 3){  return $this->commentZZ = $rukituki->grade3;    }
