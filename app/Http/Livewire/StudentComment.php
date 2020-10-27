@@ -7,20 +7,14 @@ use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use App\Models\Student;
 use App\Models\Comment;
+use App\Models\Spintax;
 
 
 
 class StudentComment extends Component
 
 {
-    /* public function process($text)
-    {
-        return preg_replace_callback(
-            '/\{(((?>[^\{\}]+)|(?R))*?)\}/x',
-            array($this, 'replace'),
-            $text
-        );
-    } */
+    
 
     //$spintax = new Spintax();
     /* public $string = '{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!'; */
@@ -38,11 +32,39 @@ class StudentComment extends Component
         $this->Intro1 = $student->Introduction;
     }
 
-    public $commentZZ;
-    public function newComment(){
-        $this->commentZZ=Comment::select('grade1')->inRandomOrder()->first();
+
+    protected $testText;
+
+    public function spinning(){
+
+        $swssw = '{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!';
+        $this->testText = new Spintax();
         
+        $this->testText->process($swssw);
+        dd($this->testText);
+    }
+
+
+    public $commentZZ;    
+    
+    public function newComment($gd){
+        if ($gd == 0){  return $this->commentZZ = '';     }
+        $gradeP = 'grade'.$gd;
+        $rukituki = Comment::inRandomOrder()->select($gradeP)->first();
         
+       
+
+        /* json_decode($rukituki); */
+        /* dd($rukituki); */
+        if ($gd == 1){  return $this->commentZZ = $rukituki->grade1;    }
+        if ($gd == 2){  return $this->commentZZ = $rukituki->grade2;    }
+        if ($gd == 3){  return $this->commentZZ = $rukituki->grade3;    }
+        if ($gd == 4){  return $this->commentZZ = $rukituki->grade4;    }
+        if ($gd == 5){  return $this->commentZZ = $rukituki->grade5;    }
+        if ($gd == 0){  return $this->commentZZ = '';   }
+            
+        
+  
     }
 
 /*     public $newQty;

@@ -1,16 +1,12 @@
 <div>
     hello {{$student->name}}<br>
 
-    hey be evo mene randoma iz db he he ovo je rand iz grade 1: {{$comment1->grade1}}<br>
- 
-    hey be evo mene randoma iz db he he ovo je rand iz grade 2: {{$comment2->grade2}}<br>
-    hey be evo mene randoma iz db he he ovo je rand iz grade 3: {{$comment2->grade3}}<br>
-    hey be evo mene randoma iz db he he ovo je rand iz grade 4: {{$comment2->grade4}}<br>
-    hey be evo mene randoma iz db he he ovo je rand iz grade 5: {{$comment2->grade5}}<br>
+    ovo je rand iz grade 1: {{$comment1->grade1}}<br> 
+    ovo je rand iz grade 2: {{$comment2->grade2}}<br>
 
     <div style="text-align: center">
-        <button wire:click="newComment">Probam coment spintax sad</button>
-        <h1> ggrade:{{$commentZZ}}</h1>
+        <button wire:click="newComment({{$Intro1}})">Probam coment spintax sad</button>
+        <h1> ggrade| {{$Intro1}} |:{{$commentZZ}} </h1>
     </div>
 
 
