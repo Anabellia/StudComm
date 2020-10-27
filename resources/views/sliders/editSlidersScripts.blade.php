@@ -1,13 +1,13 @@
 <!--     aaaaa -->
-	<script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
+	<!-- <script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('jquery-ui.min.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}"  -->>
 
 <!--######################################################################-->	
 
 
                 	<!-- slider 0 GRADE in general -->
-				<script>
+				<!-- <script>
 		        $( function() {
 		        	$( "#GRADE-max" ).slider({
 		        	range: "max",
@@ -21,7 +21,7 @@
 		        	});
 		        	$( "#grade" ).val( $( "#GRADE-max" ).slider( "value" ) );
 		        } );
-	        </script>	
+	        </script> -->	
                     
             	<!--######################################################################-->	
 	
@@ -44,7 +44,7 @@
 
 
                 <!-- slider moj petljaus (ovaj gore radi ok) -->
-                <script>
+                <!-- <script>
 		        $( function() {
 		        	$( "#Behavior-max" ).slider({
 		        	range: "max",
@@ -58,13 +58,13 @@
 		        	});
 		        	$( "#Behavior" ).val( $( "#Behavior-max" ).slider( "value" ) );
 		        } );
-	        </script>           
+	        </script> -->           
 
 <!--######################################################################-->	
 
 
 <!-- slider  for Speaking-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Speaking-max" ).slider({
 				range: "max",
@@ -78,10 +78,10 @@
 				});
 				$( "#Speaking" ).val( $( "#Speaking-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->
 
             <!-- slider  for Reading-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Reading-max" ).slider({
 				range: "max",
@@ -95,7 +95,7 @@
 				});
 				$( "#Reading" ).val( $( "#Reading-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->
            
 		<!--######################################################################-->	
 
@@ -103,7 +103,7 @@
 
 
 <!-- slider  for Writing-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Writing-max" ).slider({
 				range: "max",
@@ -117,12 +117,12 @@
 				});
 				$( "#Writing" ).val( $( "#Writing-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->
 
 
 			<!--######################################################################-->	
             <!-- slider  for Listening-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Listening-max" ).slider({
 				range: "max",
@@ -136,11 +136,11 @@
 				});
 				$( "#Listening" ).val( $( "#Listening-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->
 		<!--######################################################################-->	
 
             <!-- slider  for Comprehension-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Comprehension-max" ).slider({
 				range: "max",
@@ -154,12 +154,12 @@
 				});
 				$( "#Comprehension" ).val( $( "#Comprehension-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->
 
 		<!--######################################################################-->	
 
             <!-- slider  for Subject-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Subject-max" ).slider({
 				range: "max",
@@ -173,11 +173,11 @@
 				});
 				$( "#Subject" ).val( $( "#Subject-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->
 		<!--######################################################################-->	
 
 <!-- slider  for Conclusion-->
-<script>
+<!-- <script>
 			$( function() {
 				$( "#Conclusion-max" ).slider({
 				range: "max",
@@ -191,4 +191,4 @@
 				});
 				$( "#Conclusion" ).val( $( "#Conclusion-max" ).slider( "value" ) );
     		} );
-</script>
+</script> -->

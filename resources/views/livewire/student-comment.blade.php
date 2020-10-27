@@ -8,26 +8,13 @@
         <button wire:click="newComment({{$intro1}})">Probam coment spintax sad</button>
         <h1> ggrade| {{$intro1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }} </h1>
     </div>
-    <!-- <span class="Spintax">{{ (new App\Models\Spintax)->process($commentZZ) }}</span> -->
-
-
-    <!-- OVE "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
-    
-
-
-<!-- ovo dole sam cut iz edit -->
-    @include('sliders.editSlidersScripts')
-
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-
 
             <!-- ja pobriso defoult gluposti i dodao samo ovo -->
             <div class="wrapper create-students">
 
-                <h3>Edit student: {{$student->name}}</h3>
-
-                
+                <h3>Edit student: {{$student->name}}</h3>  
                 
                 <form action="/students/{{$student->id}}" method="POST">
                     @csrf           
@@ -41,11 +28,18 @@
                     <label for="name" >Student name:</label>
                     <input type="text" id="name" name="name" value="{{$student->name}}"></input>
                     <br>
-                    
 
+                    <!--radiobutton -->
+                    <!-- <div id="gender-group" class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+                                    <div class="col-md-6">  -->
+                    <div>                
+                        <label for="gender" class="col-md-2 control-label">Gender:  </label>                                                                                 
+                        <input id="female" type="radio" name="gender" value="Female" {{$student->gender == 'Female' ? 'checked' : ''}}> Female
+                        <input id="male" type="radio" name="gender" value="Male" {{$student->gender == 'Male' ? 'checked' :''}} > Male
+                    </div>    
+                    
                     <!--######################################################################-->	
                     <!-- OPET JEBENO PROBAM WIRE SLIDER -->
-
 
                     <!-- slider 0 GRADE IN GENERAL -->
                     <div>
@@ -65,14 +59,12 @@
                         <input type="range" name="Behavior" min="0" max="5" step="1" value="{{$student->Behavior}}" wire:model="beha1" />
                     </div><br>
 
-
             	    <!--Student Speaking  -->
                     <div>
                         <label for="speak1" >Speaking: {{$speak1}}</label>
                         <input type="range" name="Speaking" min="0" max="5" step="1" value="{{$student->Speaking}}" wire:model="speak1" />
                     </div><br>
-    
-    
+        
             	    <!-- slider  for Reading-->
                     <div>
                         <label for="read1" >Reading: {{$read1}}</label>
@@ -116,36 +108,18 @@
 
                     <!--######################################################################-->	
                     
-                    
-                    
 
-                    <!--radiobutton -->
-                    <!-- <div id="gender-group" class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                                    <div class="col-md-6">  -->
-                    <label for="gender" class="col-md-2 control-label">Gender:  </label>                                           
-                        <input id="female" type="radio" name="gender" value="Female" {{$student->gender == 'Female' ? 'checked' : ''}}> Female
-                        <input id="male" type="radio" name="gender" value="Male" {{$student->gender == 'Male' ? 'checked' :''}} > Male
-                    
-                    
-        			@include('sliders.editSlidersDivs')
-                    
 
                     <!-- about student - about_student -->
                     <br>
                     <br>
                     <div class="form-group col-md-12">
                         <label for="about_student">Add some notes about this student(optional):</label>
-                        <div class="form-group col-md-12"><textarea type="text" id="about_student" name="about_student" style="width:400px">{{$student->about_student}}</textarea></div>
+                        <div class="form-group col-md-12"><textarea type="text" id="about_student" name="about_student" style="width:600px ; height:200px">{{$student->about_student}}</textarea></div>
                         <br>
                     </div>              
 
                 </form>
-                <!-- Gore imas prvi push "PUSH" PROBAM DA SACUVAM JQUERY DA RADI ZAJEDNO SA LIVEWIRE -->
-                
-                <!-- i na kraju ovog blade filea pre /body taga imash  @/stack/('/scripts/'/)koji refresh ceo page -->
-                
-
-
 
             </div>
 
