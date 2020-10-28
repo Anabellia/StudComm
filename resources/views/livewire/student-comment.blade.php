@@ -53,7 +53,7 @@
                     <!-- slider 0 GRADE IN GENERAL -->
                     <div>
                     <div><label for="grade1" >GRADE your student in general from 1-5: {{$grade1}}</label></div>
-                        <input type="range" name="grade" min="0" max="5" step="1" value="{{$student->grade}}" wire:model="grade1" />
+                        <input type="range" name="grade" min="1" max="5" step="1" value="{{$student->grade}}" wire:model="grade1" />
                     </div><br>
                     
                     <!--(Introduction petljaus) -->
