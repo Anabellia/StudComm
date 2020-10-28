@@ -13,13 +13,7 @@ use App\Models\Spintax;
 
 class StudentComment extends Component
 
-{
-    
-
-    //$spintax = new Spintax();
-    /* public $string = '{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!'; */
-
-
+{  
     //ova mala increment func(method) je iz onog yt tutsa kratkog
     public function increment(){        
         $this->commentGGG=Comment::inRandomOrder()->first();
@@ -82,8 +76,12 @@ class StudentComment extends Component
         
 
         if($this->randAllChbx == true){
-            $ass = $this->grade1;
 
+            /* Da objasnim sebi: u ass turim trenutni globalni grade onda tom gradeu dodam 1 i oduzmem jedan da bi 
+            dobio 3 vara (npr 3,4,5) onda to uporedim sa 6 zato jer je meni 6 fals-e ako je 6 vracam 5 ako nije vracam to 
+            sto jeste i onda finale pravim josh jedan uslov rand 0 ili 1-2-3 ako je nula vracam nula ako je 1-2-ili-3 vracam to sto jeste */
+            $ass = $this->grade1;
+            
             $this->intro1 = (rand(0, 3) == 0 ? 0 :(($ssa = rand($ass-1, $ass + 1)) < 6 ? $ssa : 5));
             $this->beha1 = (rand(0, 3) == 0 ? 0 :(($ssa = rand($ass-1, $ass + 1)) < 6 ? $ssa : 5));
             $this->speak1 = (rand(0, 3) == 0 ? 0 :(($ssa = rand($ass-1, $ass + 1)) < 6 ? $ssa : 5));
@@ -117,17 +115,7 @@ class StudentComment extends Component
   
     }
 
-/*     public $newQty;
 
-    public function updateqty($id)
-    {
-        $partqty = Mypart::findOrFail($id);
-        $partqty->qty = $this->newQty;
-        $partqty->save();
-    } */
-
-    
-    
     public $student;
     public $comment1;    
     public $comment2;
