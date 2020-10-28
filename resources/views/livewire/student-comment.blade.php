@@ -5,8 +5,8 @@
     ovo je rand iz grade 2: {{$comment2->grade2}}<br>
 
     <div style="text-align: center">
-        <button wire:click="newComment({{$intro1}})">Probam coment spintax sad</button>
-        <h1> ggrade| {{$intro1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }} </h1>
+        <button wire:click="newComment({{$grade1}})">Probam coment spintax sad</button>
+        <h1> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }} </h1>
     </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -40,6 +40,15 @@
                     
                     <!--######################################################################-->	
                     <!-- OPET JEBENO PROBAM WIRE SLIDER -->
+
+                    <!-- 2 check boxa mi trebaju jedan da preuzmem kontrolu nad svima i 1 za randomnes -->
+                    <!-- ovo je da dodamo znake uzvika !!! -->
+                    controll all-> 
+                    <input wire:model="ctrlAllChbx" type="checkbox"><br />
+                    <!-- ovo je da dodamo znake uzvika !!! -->
+                    randomnes all-> 
+                    <input wire:model="randAllChbx" type="checkbox"><br />
+
 
                     <!-- slider 0 GRADE IN GENERAL -->
                     <div>

@@ -26,6 +26,8 @@ class StudentComment extends Component
     }
     public $commentGGG;
 
+    public $ctrlAllChbx = false;
+    public $randAllChbx = false;
 
     public $grade1; 
     public $intro1;  
@@ -48,6 +50,53 @@ class StudentComment extends Component
         $this->compr1 = $student->Comprehension;
         $this->subj1 = $student->Subject;
         $this->conc1 = $student->Conclusion;
+    }
+
+    public function updated($grade1){
+        if($this->grade1 == 0){
+            $this->beha1  = 0;
+            $this->intro1 = 0;
+            $this->beha1  = 0;
+            $this->speak1 = 0;
+            $this->read1  = 0;
+            $this->writ1  = 0;
+            $this->list1  = 0;
+            $this->compr1 = 0;
+            $this->subj1  = 0;
+            $this->conc1  = 0;
+        }
+
+        if($this->ctrlAllChbx == true && $this->randAllChbx == false){
+            $this->beha1 = $this->grade1;
+            $this->intro1 = $this->grade1;
+            $this->beha1 = $this->grade1;
+            $this->speak1 = $this->grade1;
+            $this->read1 = $this->grade1;
+            $this->writ1 = $this->grade1;
+            $this->list1 = $this->grade1;
+            $this->compr1 = $this->grade1;
+            $this->subj1 = $this->grade1;
+            $this->conc1 = $this->grade1;
+            
+        }
+        
+
+        if($this->ctrlAllChbx == true && $this->randAllChbx == true){
+             
+            $this->beha1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->intro1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->beha1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->speak1  = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->read1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->writ1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->list1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->compr1= (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->subj1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);
+            $this->conc1 = (rand($this->grade1-1, $this->grade1 + 1) < 5 ? : 5);       
+        
+        }
+        
+
     }
 
     public $commentZZ;    
