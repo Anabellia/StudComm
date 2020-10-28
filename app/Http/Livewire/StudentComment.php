@@ -13,7 +13,7 @@ use App\Models\Spintax;
 
 class StudentComment extends Component
 
-{  
+{
     //ova mala increment func(method) je iz onog yt tutsa kratkog
     public function increment(){        
         $this->commentGGG=Comment::inRandomOrder()->first();
@@ -116,6 +116,7 @@ class StudentComment extends Component
     }
 
 
+    
     public $student;
     public $comment1;    
     public $comment2;
