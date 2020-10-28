@@ -51,15 +51,23 @@ class StudentController extends Controller
         return view('students.create');
     }
 
-    public function store(){          
+    public function store(){   
+        
+        //validate this form
+        $this->validate(request(),[
+
+        'name' => 'required',
+        'gender'=> 'required' 
+
+       ]);
         
         $student = new Student();
         $student->teacher_id = auth()->user()->id;
-        $student->name =request('name', "");
+        $student->name =request('name');
         $student->grade =request('grade');
         $student->about_student =request('about_student', "");
         $student->used_comments ="";
-        $student->gender =request('gender', "Others");
+        $student->gender =request('gender');
         //$student->categories =request('categories');
 
         //huh probam sad slider
