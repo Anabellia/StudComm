@@ -63,7 +63,7 @@ and finally
 
     php artisan migrate
 
---Open the console and cd into PROJECT folder (/PizzaKelj) and run
+--Open the console and cd into PROJECT folder (/StudComm) and run
     php artisan serve
     
 Finally, if everything is OK in your browser, you can check out this addresses, for example:
