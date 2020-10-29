@@ -1,6 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.imgur.com/YzXshIh.png" width="200" high="200"></a></p>
 
-## About This Laravel "PizzaKelj" Project
+## About This Laravel "StudComm" Project
 
 Dont look at the name - it doesn't mean anything.
 
@@ -27,12 +27,12 @@ installation prerequisites(install on your sistem ):
     
 And add them to the path of your system (PHP/composer/npm/git/MySql), so you can use them globally.
 
---Open the console and cd into the folder where you want to clone the PizzaKelj project and run
+--Open the console and cd into the folder where you want to clone the StudComm project and run
 
 
-    git clone https://github.com/Kelj-menc/PizzaKelj.git
+    git clone https://github.com/Kelj-menc/StudComm.git
     
---in the new project directory locate ....PizzaKelj\.git\config file (its hidden on my system) open it and
+--in the new project directory locate ....StudComm\.git\config file (its hidden on my system) open it and
     add this into:
     
     [user]
@@ -42,15 +42,15 @@ And add them to the path of your system (PHP/composer/npm/git/MySql), so you can
 Save and close.
     
     
---In the project folder (\PizzaKelj) locate '.env.example' file > make a copy of that file  > past it in the same directory and rename it in a '.env' now open that file with some text editor and change in a DATABASE section 
+--In the project folder (\StudComm) locate '.env.example' file > make a copy of that file  > past it in the same directory and rename it in a '.env' now open that file with some text editor and change in a DATABASE section 
 
 
-    DB_DATABASE=pizzakelj
+    DB_DATABASE=studcomm
     DB_CONNECTION=mysql
 
---Fire up xamp and start server and mysql > click on admin(mysql) button > make new database > name:pizzakelj
+--Fire up xamp and start server and mysql > click on admin(mysql) button > make new database > name:studcomm
     
---Open the console and cd into PROJECT folder (/PizzaKelj) and run
+--Open the console and cd into PROJECT folder (/StudComm) and run
 
 
     composer update
