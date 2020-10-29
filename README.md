@@ -1,61 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.imgur.com/YzXshIh.png" width="200" high="200"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## About This Laravel "PizzaKelj" Project
 
-## About Laravel
+Dont look at the name - it doesn't mean anything.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+I'll learn Laravel following different online tutorials. At the same time will try to build one real-life application. The idea for the app came from my daughter and hopefully will be launched someday and will help people. For me personally, this project will be successful if we (my daughter and I) spend some quality time together, building and learning new things.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sorry in advance - I need to say this at the beginning of this journey because I'm a total noob in terms of properly formating and efficiently writing code and generally in the programming world. So if anyone wanna learn how to do things properly, they should leave this place. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Instaling Project (for development purposes)
+I'll write how I am doing this on my system - win10 64bit, and Visual Studio Code - free source-code editor. Please contribute if you find a better or simpler way to install/clone this or any similar project in your system/environment for development purposes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+installation prerequisites(install on your sistem ):
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    1.php (recommended 7+)
+    
+    2.composer - latest
+    
+    3.nodejs - latest
+    
+    4.git - latest
+    
+    5.xamp (with apache server and MySql)    
+    
+    
+And add them to the path of your system (PHP/composer/npm/git/MySql), so you can use them globally.
 
-## Laravel Sponsors
+--Open the console and cd into the folder where you want to clone the PizzaKelj project and run
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+    git clone https://github.com/Kelj-menc/PizzaKelj.git
+    
+--in the new project directory locate ....PizzaKelj\.git\config file (its hidden on my system) open it and
+    add this into:
+    
+    [user]
+    email = "your-gitregister-email@example.com"
+    name = "Your-Git-Hub_username"
+    
+Save and close.
+    
+    
+--In the project folder (\PizzaKelj) locate '.env.example' file > make a copy of that file  > past it in the same directory and rename it in a '.env' now open that file with some text editor and change in a DATABASE section 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+
+    DB_DATABASE=pizzakelj
+    DB_CONNECTION=mysql
+
+--Fire up xamp and start server and mysql > click on admin(mysql) button > make new database > name:pizzakelj
+    
+--Open the console and cd into PROJECT folder (/PizzaKelj) and run
+
+
+    composer update
+    
+next run
+
+    PHP artisan key:generate
+    
+and finally
+
+    php artisan migrate
+
+--Open the console and cd into PROJECT folder (/PizzaKelj) and run
+    php artisan serve
+    
+Finally, if everything is OK in your browser, you can check out this addresses, for example:
+
+
+http://127.0.0.1:8000/
+
+http://127.0.0.1:8000/students
+
+http://127.0.0.1:8000/students/create
+
+http://127.0.0.1:8000/students/2
+
+
+## Programing Languages and Frameworks
+
+-Laravel
+
+-PHP
+
+-HTML
+
+-JavaScript
+
+-NodeJS
+
+-MySql/SQLite
+
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Thank you for considering contributing to the project!
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The community is welcoming to all. Please review and abide.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please send a message. All security vulnerabilities will be promptly inspected.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The project will be open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT) until my daughter doesn't decide differently.
