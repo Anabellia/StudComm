@@ -100,18 +100,75 @@ class StudentComment extends Component
 
     public $commentZZ;    
     
-    public function newComment($gd){
-        if ($gd == 0){  return $this->commentZZ = '';     }
-        $gradeP = 'grade'.$gd;
-        $rukituki = Comment::inRandomOrder()->select($gradeP)->first();       
- 
-        if ($gd == 1){  return $this->commentZZ = $rukituki->grade1;    }
-        if ($gd == 2){  return $this->commentZZ = $rukituki->grade2;    }
-        if ($gd == 3){  return $this->commentZZ = $rukituki->grade3;    }
-        if ($gd == 4){  return $this->commentZZ = $rukituki->grade4;    }
-        if ($gd == 5){  return $this->commentZZ = $rukituki->grade5;    }
+    public function newComment($gd){ //gd je u stvari grade
+        if ($gd == 0){  return $this->commentZZ = '';     } //return nista ako je gd zero
+        $gradeP = 'grade'.$gd;         
+
+        //grab gender
+        $gender = $this->student->gender;
+
+        if($gender == 'Male'){
+            $gend_him_her = 'him';  //YYY -> him
+            $gend_her_he = 'he';    //ZZZ -> he
+            $gend_hers_his = 'his'; //HHH -> his 
+            //himself -> hmmm ovo nisam koristio ali mozda budem
+        }elseif($gender == 'Female'){
+            $gend_him_her = 'her';  //YYY -> her
+            $gend_her_he = 'she';   //ZZZ -> she
+            $gend_hers_his = 'hers'; //HHH -> hers
+            //herself -> hmmm ovo nisam koristio ali mozda budem
+        }
+        //name grab first name
+        $name = $this->student->name;
+        $wparts = explode(' ', $name);
+        $name_first = array_shift($wparts);
+        $name_last = array_pop($wparts);
+        $name_middle = trim(implode(' ', $wparts));        
+      
+        //grab comments from that row
+        $rukituki = Comment::inRandomOrder()->select($gradeP)->first(); 
+
+        //replacing name XXX->first name
+        $ruki1 = str_replace('XXX', $name_first, $rukituki->grade1);
+        $ruki2 = str_replace('XXX', $name_first, $rukituki->grade2);
+        $ruki3 = str_replace('XXX', $name_first, $rukituki->grade3);
+        $ruki4 = str_replace('XXX', $name_first, $rukituki->grade4);
+        $ruki5 = str_replace('XXX', $name_first, $rukituki->grade5);
+
+        $ruki1 = str_replace('ZZZ', $gend_her_he, $ruki1);
+        $ruki1 = str_replace('HHH', $gend_hers_his, $ruki1);
+        $ruki1 = str_replace('YYY', $gend_him_her, $ruki1);
+
+        /* $ruki1 = str_replace('ZZZ', $gend_her_he, $ruki1->grade1);
+        $ruki2 = str_replace('ZZZ', $gend_her_he, $ruki2->grade2);
+        $ruki3 = str_replace('ZZZ', $gend_her_he, $ruki3->grade3);
+        $ruki4 = str_replace('ZZZ', $gend_her_he, $ruki4->grade4);
+        $ruki5 = str_replace('ZZZ', $gend_her_he, $ruki5->grade5);
+
+        $ruki1 = str_replace('HHH', $gend_shees_his, $ruki1->grade1);
+        $ruki2 = str_replace('HHH', $gend_shees_his, $ruki2->grade2);
+        $ruki3 = str_replace('HHH', $gend_shees_his, $ruki3->grade3);
+        $ruki4 = str_replace('HHH', $gend_shees_his, $ruki4->grade4);
+        $ruki5 = str_replace('HHH', $gend_shees_his, $ruki5->grade5); */
+
+
+        if ($gd == 1){  return $this->commentZZ = $ruki1;    }
+        if ($gd == 2){  return $this->commentZZ = $ruki2;    }
+        if ($gd == 3){  return $this->commentZZ = $ruki3;    }
+        if ($gd == 4){  return $this->commentZZ = $ruki4;    }
+        if ($gd == 5){  return $this->commentZZ = $ruki5;    }
         if ($gd == 0){  return $this->commentZZ = '';   }
             
+
+                //////////////////////////////////////////////////////////////
+        
+        /* str_replace('XXX', $sss, $rukituki->grade1); */       
+
+        $firstDespin = str_replace ('XXX', $name_first, $spinningSad);      
+
+        return $firstDespin;
+
+        /////////////////////////////////////////////////////////////////// 
         
   
     }

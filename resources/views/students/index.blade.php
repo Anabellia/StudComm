@@ -4,8 +4,7 @@
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     
     
-    <!-- ja pobriso defoult gluposti i dodao samo ovo -->
-    
+    <!-- ja pobriso defoult gluposti i dodao samo ovo -->    
     
     <div class="content">
         <div class="title mx-auto ">
@@ -22,8 +21,8 @@
         <!-- ovo je message kad napravish novog studenta -->
         <p class="mssg">{{ session('mssg')}}</p>
 
-        <div><p>{{$konj}}</p></div>
-        
+        <!-- Ovo je glupost samo da probam display var -->
+        <div><p>{{$konj}}</p></div>        
 
 
         <div class="wrapper student-index">

@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Student;
+use App\Models\Comment;
+
 class Spintax extends Model
 
 {
@@ -19,18 +22,26 @@ class Spintax extends Model
         
     public function process($text)
     {
+       
+        
+        
         return preg_replace_callback(
             '/\{(((?>[^\{\}]+)|(?R))*?)\}/x',
             array($this, 'replace'),
-            $text
+            $text            
         );
+
+
+
     }
     
         public function replace($text)
         {
             $text = $this->process($text[1]);
             $parts = explode('|', $text);
+            
             return $parts[array_rand($parts)];
+            
         }
     
     

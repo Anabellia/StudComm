@@ -6,7 +6,7 @@
 
     <div style="text-align: center">
         <button wire:click="newComment({{$grade1}})">Probam coment spintax sad</button>
-        <h1> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }} </h1>
+        <h1> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }}</h1>
     </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">

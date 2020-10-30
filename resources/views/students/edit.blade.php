@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-
-
 @livewire('student-comment', ['student' => $student]) 
 
 @endsection
