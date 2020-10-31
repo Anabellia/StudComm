@@ -25,6 +25,14 @@ class StudentComment extends Component
 
     public $grade1; 
     public $intro1;  
+    public $intro1_cbx = false; 
+    public function updated($intro1_cbx){
+      
+            $this->intro1 = 0;
+        }
+
+    }
+    
     public $beha1;    
     public $speak1;
     public $read1;
@@ -139,19 +147,7 @@ class StudentComment extends Component
         $ruki1 = str_replace('HHH', $gend_hers_his, $ruki1);
         $ruki1 = str_replace('YYY', $gend_him_her, $ruki1);
 
-        /* $ruki1 = str_replace('ZZZ', $gend_her_he, $ruki1->grade1);
-        $ruki2 = str_replace('ZZZ', $gend_her_he, $ruki2->grade2);
-        $ruki3 = str_replace('ZZZ', $gend_her_he, $ruki3->grade3);
-        $ruki4 = str_replace('ZZZ', $gend_her_he, $ruki4->grade4);
-        $ruki5 = str_replace('ZZZ', $gend_her_he, $ruki5->grade5);
-
-        $ruki1 = str_replace('HHH', $gend_shees_his, $ruki1->grade1);
-        $ruki2 = str_replace('HHH', $gend_shees_his, $ruki2->grade2);
-        $ruki3 = str_replace('HHH', $gend_shees_his, $ruki3->grade3);
-        $ruki4 = str_replace('HHH', $gend_shees_his, $ruki4->grade4);
-        $ruki5 = str_replace('HHH', $gend_shees_his, $ruki5->grade5); */
-
-
+        
         if ($gd == 1){  return $this->commentZZ = $ruki1;    }
         if ($gd == 2){  return $this->commentZZ = $ruki2;    }
         if ($gd == 3){  return $this->commentZZ = $ruki3;    }
@@ -160,7 +156,7 @@ class StudentComment extends Component
         if ($gd == 0){  return $this->commentZZ = '';   }
             
 
-                //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
         
         /* str_replace('XXX', $sss, $rukituki->grade1); */       
 
@@ -168,12 +164,9 @@ class StudentComment extends Component
 
         return $firstDespin;
 
-        /////////////////////////////////////////////////////////////////// 
-        
+        ///////////////////////////////////////////////////////////////////         
   
     }
-
-
     
     public $student;
     public $comment1;    

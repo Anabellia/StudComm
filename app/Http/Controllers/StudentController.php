@@ -20,7 +20,10 @@ class StudentController extends Controller
         //$students = Student::all();
         //$students = Student::where('grade', 4)->get();
         //$students = Student::latest()->get(); 
+
+        //ovak konj mozesh da display na page u blade lako to je moja neka test funcija <div><p>{{$konj}}</p></div>    
         $konj = hello();
+        
         //ovo ispod sam ja spetljao da samo svoje studente vidi
         $students = Student::where('teacher_id', (auth()->user()->id))->get();  
 

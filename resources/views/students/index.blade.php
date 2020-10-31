@@ -16,24 +16,48 @@
         <br />    
         <div class="text m-b-md">You can 
         
-            <a href="{{ route('students.create') }}"><button> Create new student</button></a> <br><br>Or choose one from the list
+            <a href="{{ route('students.create') }}"><button> Create new student</button>Or choose one from the list</a> <br><br>
         </div>
         <!-- ovo je message kad napravish novog studenta -->
         <p class="mssg">{{ session('mssg')}}</p>
 
-        <!-- Ovo je glupost samo da probam display var -->
-        <div><p>{{$konj}}</p></div>        
+        <!-- ///////////////////////////////////////////////////// -->
+
+        <table class="table table-hover">
+
+    <thead>
+
+      <th>Student Name</th>
+
+      <th>Details </th>
+
+      <th>Make Comements</th>
+
+    </thead>
+
+    <tbody>
+@foreach($students as $student)
+
+        <tr>
+
+          <td><b>{{$student->name}}</b> </td>
+
+          <td></form><a href="/students/{{$student->id}}"><button>View Student details</button></a>  </td>
+
+          <td></form><a href="/students/{{$student->id}}/edit"><button>Make comments / Edit student</button></a>  </td>
 
 
-        <div class="wrapper student-index">
-            @foreach($students as $student)     
-                <div>
-                    <a href="/students/{{$student->id}}"><b>{{$student->name}} </b></a>
-                          
-                </div>
-            @endforeach
+        </tr>
+@endforeach
 
-        </div>    
+    </tbody>
+
+</table>
+
+        <!-- ///////////////////////////////////////////////////// -->
+
+
+            
     </div
 </div>
 

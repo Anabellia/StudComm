@@ -1,12 +1,7 @@
 <div>
-    hello {{$student->name}}<br>
-
-    ovo je rand iz grade 1: {{$comment1->grade1}}<br> 
-    ovo je rand iz grade 2: {{$comment2->grade2}}<br>
-
     <div style="text-align: center">
-        <button wire:click="newComment({{$grade1}})">Probam coment spintax sad</button>
-        <h1> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }}</h1>
+        <button wire:click="newComment({{$grade1}})">Probam coment spintax sad</button><br><br>
+        <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }}</p>
     </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -58,7 +53,10 @@
                     
                     <!--(Introduction petljaus) -->
                     <div>
-                        <label for="intro1" >Introduction: {{$intro1}}</label>
+                    
+                    on/off-> 
+                        <input wire:model="intro1_cbx" type="checkbox">
+                        <label style=@if($intro1_cbx) "color:red;" @endif for="intro1" >Introduction: {{$intro1}}</label>
                         <input type="range" name="Introduction" min="0" max="5" step="1" value="{{$student->Introduction}}" wire:model="intro1" />
                     </div><br>
 
