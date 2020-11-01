@@ -1,5 +1,31 @@
 <div>
+
+<!-- ////////////////////////////////////////////////////// -->
+<!-- <fieldset>
+        <legend>Comment: </legend>
+        
+        <p>
+          <label></label>
+          <textarea id = "myTextArea"
+                  rows = "3"
+                  cols = "80">{{ (new App\Models\Spintax)->process($commentZZ) }}</textarea>
+        </p>
+      </fieldset> -->
+
+<!-- ////////////////////////////////////////////////////////////// -->
+
+
     <div style="text-align: center">
+    <fieldset>
+        <legend>Comment: </legend>
+        
+        <p>
+          <label></label>
+          <textarea id = "myTextArea"
+                  rows = "3"
+                  cols = "80">{{ (new App\Models\Spintax)->process($commentZZ) }}</textarea>
+        </p>
+      </fieldset>
         <button wire:click="newComment({{$grade1}})">Probam coment spintax sad</button><br><br>
         <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }}</p>
     </div>
@@ -54,9 +80,8 @@
                     <!--(Introduction petljaus) -->
                     <div>
                     
-                    on/off-> 
-                        <input wire:model="intro1_cbx" type="checkbox">
-                        <label style=@if($intro1_cbx) "color:red;" @endif for="intro1" >Introduction: {{$intro1}}</label>
+                    
+                        <label style=@if($intro1 == 0) "color:red;" @endif for="intro1" >Introduction: {{$intro1}}</label>
                         <input type="range" name="Introduction" min="0" max="5" step="1" value="{{$student->Introduction}}" wire:model="intro1" />
                     </div><br>
 

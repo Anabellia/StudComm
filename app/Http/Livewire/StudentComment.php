@@ -15,23 +15,19 @@ class StudentComment extends Component
 
 {
     //ova mala increment func(method) je iz onog yt tutsa kratkog
-    public function increment(){        
+    /* public function increment(){        
         $this->commentGGG=Comment::inRandomOrder()->first();
     }
-    public $commentGGG;
+    public $commentGGG; */
 
     public $ctrlAllChbx = false;
     public $randAllChbx = false;
 
     public $grade1; 
     public $intro1;  
-    public $intro1_cbx = false; 
-    public function updated($intro1_cbx){
-      
-            $this->intro1 = 0;
-        }
+    
 
-    }
+    
     
     public $beha1;    
     public $speak1;
@@ -55,6 +51,11 @@ class StudentComment extends Component
     }
 
     public function updated($grade1){
+        
+
+
+
+
         if($this->grade1 == 0){
 
             $this->intro1  = 0;
