@@ -11,7 +11,7 @@
                   cols = "80">{{ (new App\Models\Spintax)->process($commentZZ) }}</textarea>
         </p>
       </fieldset>
-        <button wire:click="newComment({{$grade1}})">Probam coment spintax sad</button><br><br>
+        <button wire:click="newComment({{$intro1}})">Probam coment spintax sad</button><br><br>
         <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }}</p>
     </div>
 
@@ -59,7 +59,7 @@
                     <!-- slider 0 GRADE IN GENERAL -->
                     <div>
                     <div><label for="grade1" >GRADE your student in general from 1-5: {{$grade1}}</label></div>
-                        <input type="range" name="grade" min="1" max="5" step="1" value="{{$student->grade}}" wire:model="grade1" />
+                        <input type="range" name="grade" min="1" max="3" step="1" value="{{$student->grade}}" wire:model="grade1" />
                     </div><br>
                     
                     <!--(Introduction petljaus) -->
@@ -67,60 +67,60 @@
                     
                     
                         <label style=@if($intro1 == 0) "color:red;" @endif for="intro1" >Introduction: {{$intro1}}</label>
-                        <input type="range" name="Introduction" min="0" max="5" step="1" value="{{$student->Introduction}}" wire:model="intro1" />
+                        <input type="range" name="Introduction" min="0" max="3" step="1" value="{{$student->Introduction}}" wire:model="intro1" />
                     </div><br>
 
                     <!--(Behavior petljaus) -->
                     <div>
                         <label for="beha1" >Behavior: {{$beha1}}</label>
-                        <input type="range" name="Behavior" min="0" max="5" step="1" value="{{$student->Behavior}}" wire:model="beha1" />
+                        <input type="range" name="Behavior" min="0" max="3" step="1" value="{{$student->Behavior}}" wire:model="beha1" />
                     </div><br>
 
             	    <!--Student Speaking  -->
                     <div>
                         <label for="speak1" >Speaking: {{$speak1}}</label>
-                        <input type="range" name="Speaking" min="0" max="5" step="1" value="{{$student->Speaking}}" wire:model="speak1" />
+                        <input type="range" name="Speaking" min="0" max="3" step="1" value="{{$student->Speaking}}" wire:model="speak1" />
                     </div><br>
         
             	    <!-- slider  for Reading-->
                     <div>
                         <label for="read1" >Reading: {{$read1}}</label>
-                        <input type="range" name="Reading" min="0" max="5" step="1" value="{{$student->Reading}}" wire:model="read1" />
+                        <input type="range" name="Reading" min="0" max="3" step="1" value="{{$student->Reading}}" wire:model="read1" />
                     </div><br>
     
     
             	    <!--Student Writing  -->
                     <div>
                         <label for="writ1" >Writing: {{$writ1}}</label>
-                        <input type="range" name="Writing" min="0" max="5" step="1" value="{{$student->Writing}}" wire:model="writ1" />
+                        <input type="range" name="Writing" min="0" max="3" step="1" value="{{$student->Writing}}" wire:model="writ1" />
                     </div><br>
 
 
                     <!--Student Listening  -->
                     <div>
                         <label for="list1" >Listening: {{$list1}}</label>
-                        <input type="range" name="Listening" min="0" max="5" step="1" value="{{$student->Listening}}" wire:model="list1" />
+                        <input type="range" name="Listening" min="0" max="3" step="1" value="{{$student->Listening}}" wire:model="list1" />
                     </div><br>
 
 
                     <!--Student Comprehension  -->
                     <div>
                         <label for="compr1" >Comprehension: {{$compr1}}</label>
-                        <input type="range" name="Comprehension" min="0" max="5" step="1" value="{{$student->Comprehension}}" wire:model="compr1" />
+                        <input type="range" name="Comprehension" min="0" max="3" step="1" value="{{$student->Comprehension}}" wire:model="compr1" />
                     </div><br>
 
 
                     <!--Student Subject  -->
                     <div>
                         <label for="subj1" >Subject: {{$subj1}}</label>
-                        <input type="range" name="Subject" min="0" max="5" step="1" value="{{$student->Subject}}" wire:model="subj1" />
+                        <input type="range" name="Subject" min="0" max="3" step="1" value="{{$student->Subject}}" wire:model="subj1" />
                     </div><br>
 
 
                     <!--Student Conclusion  -->
                     <div>
                         <label for="conc1" >Conclusion: {{$conc1}}</label>
-                        <input type="range" name="Conclusion" min="0" max="5" step="1" value="{{$student->Conclusion}}" wire:model="conc1" />
+                        <input type="range" name="Conclusion" min="0" max="3" step="1" value="{{$student->Conclusion}}" wire:model="conc1" />
                     </div><br>
 
                     <!--######################################################################-->	
