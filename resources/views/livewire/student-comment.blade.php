@@ -1,20 +1,5 @@
 <div>
 
-<!-- ////////////////////////////////////////////////////// -->
-<!-- <fieldset>
-        <legend>Comment: </legend>
-        
-        <p>
-          <label></label>
-          <textarea id = "myTextArea"
-                  rows = "3"
-                  cols = "80">{{ (new App\Models\Spintax)->process($commentZZ) }}</textarea>
-        </p>
-      </fieldset> -->
-
-<!-- ////////////////////////////////////////////////////////////// -->
-
-
     <div style="text-align: center">
     <fieldset>
         <legend>Comment: </legend>
