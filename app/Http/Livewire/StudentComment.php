@@ -124,7 +124,7 @@ class StudentComment extends Component
         }elseif($gender == 'Female'){
             $gend_him_her = 'her';  //YYY -> her
             $gend_she_he = 'she';   //(he/she) -> she
-            $gend_her_his = 'her'; //HHH -> her
+            $gend_her_his = 'hers'; //HHH -> her
             //herself/himself -> hmmm ovo nisam koristio ali mozda budem
         }
         //name grab first name
