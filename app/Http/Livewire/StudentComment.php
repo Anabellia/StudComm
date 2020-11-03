@@ -142,8 +142,9 @@ class StudentComment extends Component
         $intro_DB = Comment::inRandomOrder()->select('Introduction'.$thintro1)->first();
             
             /* dd($intro_DB[$thintro1-1]); */
-            $Intro_ctrl = str_replace('(name)',   $name_first, $intro_DB[$thintro1-1]);
-            dd($Intro_ctrl-);
+            $Intro_ctrl = str_replace('(name)',   $name_first, $intro_DB->Introduction3);
+
+            dd($Intro_ctrl);
         
         $Intro_ctrl = str_replace('(name)',   $name_first, $Intro_ctrl);
 
