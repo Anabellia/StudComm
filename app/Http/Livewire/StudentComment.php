@@ -25,11 +25,11 @@ class StudentComment extends Component
 
     public $grade1; 
     public $intro1;  
-    
+    public $beha1; 
 
     
     
-    public $beha1;    
+       
     public $speak1;
     public $read1;
     public $writ1;
@@ -107,69 +107,99 @@ class StudentComment extends Component
 
     }
 
-    public $commentZZ;    
+    public $commentINT;    
+    public $commentBEH;
     
-    public function newComment($gd){ //gd je u stvari grade
-        if ($gd == 0){  return $this->commentZZ = '';     } //return nista ako je gd zero
-        $IntroductionGrade = 'Introduction'.$gd;         
-
+    public function newComment(){ 
+        
         //grab gender
         $gender = $this->student->gender;
 
-        if($gender == 'Male'){
-            $gend_him_her = 'him';  //YYY -> him
-            $gend_she_he = 'he';    //(he/she) -> he
-            $gend_her_his = 'his'; //HHH -> his 
-            
-        }elseif($gender == 'Female'){
-            $gend_him_her = 'her';  //YYY -> her
-            $gend_she_he = 'she';   //(he/she) -> she
-            $gend_her_his = 'hers'; //HHH -> her
-            //herself/himself -> hmmm ovo nisam koristio ali mozda budem
-        }
+            if($gender == 'Male'){
+                $gend_him_her = 'him';  //YYY -> him
+                $gend_she_he = 'he';    //(he/she) -> he
+                $gend_her_his = 'his'; //HHH -> his 
+
+            }elseif($gender == 'Female'){
+                $gend_him_her = 'her';  //YYY -> her
+                $gend_she_he = 'she';   //(he/she) -> she
+                $gend_her_his = 'hers'; //HHH -> her
+                //herself/himself -> hmmm ovo nisam koristio ali mozda budem
+            }
+
         //name grab first name
         $name = $this->student->name;
-        $wparts = explode(' ', $name);
-        $name_first = array_shift($wparts);
-        $name_last = array_pop($wparts);
-        $name_middle = trim(implode(' ', $wparts));        
-      
+            $wparts = explode(' ', $name);
+            $name_first = array_shift($wparts);
+            $name_last = array_pop($wparts);
+            $name_middle = trim(implode(' ', $wparts));  
+
+        //////////////////////////////////////////////////////////////
+            //vrednost intro1 turim u thintro (this intro1)
+        $thintro1 = $this->intro1;
+        if ($thintro1 == 0){  return $this->commentINT = '';     }        
+        
+        $intro_DB = Comment::inRandomOrder()->select('Introduction'.$thintro1)->first();
+            
+            /* dd($intro_DB[$thintro1-1]); */
+            $Intro_ctrl = str_replace('(name)',   $name_first, $intro_DB[$thintro1-1]);
+            dd($Intro_ctrl-);
+        
+        $Intro_ctrl = str_replace('(name)',   $name_first, $Intro_ctrl);
+
+        $Intro_ctrl = str_replace('(he/she)', $gend_she_he,  $Intro_ctrl);
+        $Intro_ctrl = str_replace('HHH',      $gend_her_his, $Intro_ctrl);
+        $Intro_ctrl = str_replace('YYY',      $gend_him_her, $Intro_ctrl);
+
+
+
+        return $this->commentINT = $Intro_ctrl;
+
+
+
+
+        if ($thintro1 == 1){
+            //grab comments from that row
+            $intro_DB = Comment::inRandomOrder()->select('Introduction'.$this->intro1)->first();            
+        }
+        if ($this->intro1 == 2){
+            //grab comments from that row
+            $intro_DB2 = Comment::inRandomOrder()->select('Introduction'.$this->intro1)->first();            
+        }
+        if ($this->intro1 == 3){
+            //grab comments from that row
+            $intro_DB3 = Comment::inRandomOrder()->select('Introduction'.$this->intro1)->first();            
+        }
+
         //grab comments from that row
-        $rukituki = Comment::inRandomOrder()->select($IntroductionGrade)->first(); 
+        $introDB = Comment::inRandomOrder()->select($IntroductionGrade)->first(); 
 
         //replacing name (name)->first name
-        $Intro1 = str_replace('(name)', $name_first, $rukituki->Introduction1);
-        $Intro2 = str_replace('(name)', $name_first, $rukituki->Introduction2);
-        $Intro3 = str_replace('(name)', $name_first, $rukituki->Introduction3);        
+        $Intro1 = str_replace('(name)',   $name_first, $introDB->Introduction1);
+        $Intro2 = str_replace('(name)',   $name_first, $introDB->Introduction2);
+        $Intro3 = str_replace('(name)',   $name_first, $introDB->Introduction3);        
 
         $Intro1 = str_replace('(he/she)', $gend_she_he,  $Intro1);
-        $Intro1 = str_replace('HHH', $gend_her_his, $Intro1);
-        $Intro1 = str_replace('YYY', $gend_him_her, $Intro1);
+        $Intro1 = str_replace('HHH',      $gend_her_his, $Intro1);
+        $Intro1 = str_replace('YYY',      $gend_him_her, $Intro1);
 
         $Intro2 = str_replace('(he/she)', $gend_she_he,  $Intro2);
-        $Intro2 = str_replace('HHH', $gend_her_his, $Intro2);
-        $Intro2 = str_replace('YYY', $gend_him_her, $Intro2);
+        $Intro2 = str_replace('HHH',      $gend_her_his, $Intro2);
+        $Intro2 = str_replace('YYY',      $gend_him_her, $Intro2);
 
         $Intro3 = str_replace('(he/she)', $gend_she_he,  $Intro3);
-        $Intro3 = str_replace('HHH', $gend_her_his, $Intro3);
-        $Intro3 = str_replace('YYY', $gend_him_her, $Intro3);
+        $Intro3 = str_replace('HHH',      $gend_her_his, $Intro3);
+        $Intro3 = str_replace('YYY',      $gend_him_her, $Intro3);
 
         
-        if ($gd == 1){  return $this->commentZZ = $Intro1;    }
-        if ($gd == 2){  return $this->commentZZ = $Intro2;    }
-        if ($gd == 3){  return $this->commentZZ = $Intro3;    }
-        if ($gd == 0){  return $this->commentZZ = '';   }
+        
+        if ($this->intro1 == 2){  return $this->commentINT = $Intro2;    }
+        if ($this->intro1 == 3){  return $this->commentINT = $Intro3;    }
+        
             
 
         //////////////////////////////////////////////////////////////
-        
-        /* str_replace('(name)', $sss, $rukituki->grade1); */       
-
-        $firstDespin = str_replace ('(name)', $name_first, $spinningSad);      
-
-        return $firstDespin;
-
-        ///////////////////////////////////////////////////////////////////         
+      
   
     }
     

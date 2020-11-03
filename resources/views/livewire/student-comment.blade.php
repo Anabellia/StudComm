@@ -8,11 +8,11 @@
           <label></label>
           <textarea id = "myTextArea"
                   rows = "3"
-                  cols = "80">{{ (new App\Models\Spintax)->process($commentZZ) }}</textarea>
+                  cols = "80">{{ (new App\Models\Spintax)->process($commentINT) }}</textarea>
         </p>
       </fieldset>
-        <button wire:click="newComment({{$intro1}})">Probam coment spintax sad</button><br><br>
-        <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentZZ) }}</p>
+        <button wire:click="newComment">Probam coment spintax sad</button><br><br>
+        <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentINT) }}</p>
     </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
