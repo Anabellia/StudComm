@@ -83,7 +83,8 @@
                         <input type="range" name="Behavior" min="0" max="3" step="1" value="{{$beha1}}" wire:model="beha1" />
                     </div><br>
 
-            	    <!--Student Speaking  -->
+
+                    <!--Student Speaking  -->                                    
                     <div>
                         <label for="speak1" >Speaking: {{$speak1}}</label>
                         <input type="range" name="Speaking" min="0" max="3" step="1" value="{{$speak1}}" wire:model="speak1" />

@@ -76,6 +76,9 @@
                         <input type="range" name="Behavior" min="0" max="3" step="1" value="{{$student->Behavior}}" wire:model="beha1" />
                     </div><br>
 
+                    <!-- /////////////////////////////////////// -->
+                    <!-- sad cu sa ovim da probam napravim child -->
+                    @livewire('speaking-comment', ['noName' => $noName])
             	    <!--Student Speaking  -->
                     <div>
                         <label for="speak1" >Speaking: {{$speak1}}</label>
