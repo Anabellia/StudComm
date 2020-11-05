@@ -1,29 +1,8 @@
 <div>
-    <!--     aaaaa -->
-    <script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
+    <!--     ovo sam ranije koristio sa jquery ali sad mi nije uopste potrebno posto sam na vire ali eto ostavljam -->
+    <!-- <script src="{{ asset('jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('jquery-ui.min.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" >
-
-
-	<!-- <script>
-		$( function() {
-			$( "#slider-range-max" ).slider({
-			range: "max",
-			min: 0,
-			max: 5,
-			//defoult
-			value: 2,
-			slide: function( event, ui ) {
-				$( "#amount" ).val( ui.value );
-			}
-			});
-			$( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
-		} );
-	</script> -->
-   
-
-<!--     aaaaa -->
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('jquery-ui.min.css') }}" > -->
 
 
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">

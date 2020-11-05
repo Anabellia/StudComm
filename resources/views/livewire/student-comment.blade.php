@@ -78,12 +78,9 @@
 
                     <!-- /////////////////////////////////////// -->
                     <!-- sad cu sa ovim da probam napravim child -->
-                    @livewire('speaking-comment', ['noName' => $noName])
+                    @livewire('speaking-comment', ['noName' => $noName, 'student' => $student, 'speak1' => $speak1, 'grade1' => $grade1])
             	    <!--Student Speaking  -->
-                    <div>
-                        <label for="speak1" >Speaking: {{$speak1}}</label>
-                        <input type="range" name="Speaking" min="0" max="3" step="1" value="{{$student->Speaking}}" wire:model="speak1" />
-                    </div><br>
+                    
         
             	    <!-- slider  for Reading-->
                     <div>
