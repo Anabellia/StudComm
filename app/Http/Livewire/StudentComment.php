@@ -40,7 +40,8 @@ class StudentComment extends Component
     public function mount(Student $student){
         $this->grade1 = $student->grade;
         $this->intro1 = $student->Introduction;
-        $this->beha1 = $student->Behavior;        
+        $this->beha1 = $student->Behavior;  
+        $this->speak1 = $student->Speaking;       
         $this->read1 = $student->Reading;
         $this->writ1 = $student->Writing;
         $this->list1 = $student->Listening;
@@ -59,7 +60,7 @@ class StudentComment extends Component
 
             $this->intro1  = 0;
             $this->beha1 = 0;
-            
+            $this->speak1 = 0;            
             $this->read1  = 0;
             $this->writ1  = 0;
             $this->list1  = 0;
@@ -72,7 +73,7 @@ class StudentComment extends Component
             
             $this->intro1 = $this->grade1;
             $this->beha1 = $this->grade1;
-            
+            $this->speak1 = $this->grade1;            
             $this->read1 = $this->grade1;
             $this->writ1 = $this->grade1;
             $this->list1 = $this->grade1;
@@ -155,8 +156,7 @@ class StudentComment extends Component
       
   
     }
-    /* Sa child component petljam ppo drugi put */
-    public $noName = 'Bezimeni';
+
 
 
     public function render(){        
