@@ -152,7 +152,6 @@ class StudentComment extends Component
         $Intro_ctrl = str_replace('YYY',      $gend_him_her, $Intro_ctrl);
 
         return $this->commentINT = $Intro_ctrl;
-
       
   
     }
