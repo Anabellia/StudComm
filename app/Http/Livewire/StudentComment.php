@@ -137,30 +137,32 @@ class StudentComment extends Component
         //////////////////////////////////////////////////////////////
             //vrednost intro1 turim u thintro (this intro1)
         $thintro1 = $this->intro1;
-        if ($thintro1 == 0){  return $this->commentINT = '';     }        
-        
-        $intro_DB = Comment::inRandomOrder()->select('Introduction'.$thintro1)->first();
+        if ($thintro1 == 0){  return $this->commentINT = '';     
+        }
+        else
+        $this_intro = 'Introduction'.$thintro1;                       
+        $intro_DB = Comment::inRandomOrder()->select($this_intro)->first();
+
+        $thbeha1 = $this->beha1;
+        if ($thbeha1 == 0){  return $this->commentBEHA = '';     
+        }
+        else
+        $this_beha = 'Behavior'.$thbeha1;                       
+        $beha_DB = Comment::inRandomOrder()->select($this_beha)->first();
             
-        /* dd($intro_DB[$thintro1-1]); */
-        $Intro_ctrl = str_replace('(name)',   $name_first, $intro_DB->Introduction3);
-
-        
-        $Intro_ctrl = str_replace('(name)',   $name_first, $Intro_ctrl);
-
+        /* Ovo dole je crap trebalo bi complete u svim comments da zamenim 
+        ovo a ne samo u intro imaj u VIDU!!!! */
+        $Intro_ctrl = str_replace('(name)',   $name_first, $intro_DB->$this_intro);     
         $Intro_ctrl = str_replace('(he/she)', $gend_she_he,  $Intro_ctrl);
         $Intro_ctrl = str_replace('HHH',      $gend_her_his, $Intro_ctrl);
         $Intro_ctrl = str_replace('YYY',      $gend_him_her, $Intro_ctrl);
 
         $spintax = new Spintax();
-        /* $string = "{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!"."\n"; */
         $spintax = $spintax->process($Intro_ctrl);
-        
 
-        return $this->commentINT = $spintax;
-      
+        return $this->commentINT = $spintax;      
   
     }
-
 
 
     public function render(){        
