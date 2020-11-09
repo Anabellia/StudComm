@@ -151,7 +151,12 @@ class StudentComment extends Component
         $Intro_ctrl = str_replace('HHH',      $gend_her_his, $Intro_ctrl);
         $Intro_ctrl = str_replace('YYY',      $gend_him_her, $Intro_ctrl);
 
-        return $this->commentINT = $Intro_ctrl;
+        $spintax = new Spintax();
+        /* $string = "{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}!"."\n"; */
+        $spintax = $spintax->process($Intro_ctrl);
+        
+
+        return $this->commentINT = $spintax;
       
   
     }

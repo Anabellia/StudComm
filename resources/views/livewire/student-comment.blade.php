@@ -8,11 +8,12 @@
                   <label></label>
                   <textarea id = "myTextArea"
                           rows = "3"
-                          cols = "80">{{ (new App\Models\Spintax)->process($commentINT) }}</textarea>
+                          cols = "80">{{ $commentINT }}</textarea>
                 </p>
             </fieldset>
         <button wire:click="newComment">Probam coment spintax sad</button><br><br>
-        <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentINT) }}</p>
+        <!-- <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentINT) }}</p> -->
+        <p style="color:red;"> ggrade| {{$grade1}} |:{{ $commentINT }}</p>
     </div>
 
     <!-- Nedelja 8Nov opet probam Mother children -->
@@ -80,17 +81,14 @@
                         <input type="range" name="Behavior" min="0" max="3" step="1" value="{{$student->Behavior}}" wire:model="beha1" />
                     </div><br>
 
-                    <!-- /////////////////////////////////////// -->
-                    <!-- sad cu sa ovim da probam napravim child -->
-
+                    
+                    <!--Student Speaking  -->
                     <div>
                         <label for="speak1" >Speaking: {{$speak1}}</label>
                         <input wire:model="speak1" type="range" name="Speaking" min="0" max="3" step="1" value="{{$student->Speaking}}"/>
-                    </div><br>
-                    
-            	    <!--Student Speaking  -->
-                    
-        
+                    </div><br>                  
+            	    
+                            
             	    <!-- slider  for Reading-->
                     <div>
                         <label for="read1" >Reading: {{$read1}}</label>
