@@ -36,40 +36,27 @@ class Spintax extends Model
             return $parts[array_rand($parts)];            
         }
 
-        public function gender_spinn($spintax)
-        {
-            $gender = $this->student->gender;
-            if($gender == 'Male'){
-                $gend_him_her = 'him';  //YYY -> him
-                $gend_she_he = 'he';    //(he/she) -> he
-                $gend_her_his = 'his'; //HHH -> his 
-
-            }elseif($gender == 'Female'){
-                $gend_him_her = 'her';  //YYY -> her
-                $gend_she_he = 'she';   //(he/she) -> she
-                $gend_her_his = 'hers'; //HHH -> her
-                //herself/himself -> hmmm ovo nisam koristio ali mozda budem
-            }
-
-            $spintax = str_replace('(he/she)', $gend_she_he,  $spintax);
-            $spintax = str_replace('HHH',      $gend_her_his, $spintax);
-            $spintax = str_replace('YYY',      $gend_him_her, $spintax);
-            return $spintax;
         
-        }
 
-        public function name_spinn($name, $spintax)
-        {
-            //name grab first name ; last name ; middle name       
-            $wparts = explode(' ', $name);
-            $name_first = array_shift($wparts);
-            $name_last = array_pop($wparts);
-            $name_middle = trim(implode(' ', $wparts)); 
+        
 
-            $spintax = str_replace('(name)',   $name_first, $spintax);
-            return $spintax;
-
-        }
+        // return string with first letters of sentences capitalized
+        function ucsentence($str) {
+            if ($str) { // input
+              $str = preg_replace('/'.chr(32).chr(32).'+/', chr(32), $str); // recursively replaces all double spaces with a space
+              if (($x = substr($str, 0, 10)) && ($x == strtoupper($x))) $str = strtolower($str); // sample of first 10 chars is ALLCAPS so convert $str to lowercase; if always done then any proper capitals would be lost
+              $na = array('. ', '! ', '? '); // punctuation needles
+              foreach ($na as $n) { // each punctuation needle
+                if (strpos($str, $n) !== false) { // punctuation needle found
+                  $sa = explode($n, $str); // split
+                  foreach ($sa as $s) $ca[] = ucfirst($s); // capitalize
+                  $str = implode($n, $ca); // replace $str with rebuilt version
+                  unset($ca); //  clear for next loop
+                }
+              }
+              return ucfirst(trim($str)); // capitalize first letter in case no punctuation needles found
+            }
+          }
     
     
 }

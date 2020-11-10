@@ -16,10 +16,6 @@
         <p style="color:red;"> ggrade| {{$grade1}} |:{{ $commentINT }}</p>
     </div>
 
-    <!-- Nedelja 8Nov opet probam Mother children -->
-    <!-- //////////////////////////////////////////////// -->
-    
-
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
 
             <!-- ja pobriso defoult gluposti i dodao samo ovo -->

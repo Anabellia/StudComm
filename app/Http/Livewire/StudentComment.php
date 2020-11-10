@@ -108,7 +108,7 @@ class StudentComment extends Component
     }
 
     public $commentINT;    
-    public $commentBEH;
+    public $commentBEHA;
     
     public function newComment(){ 
         
@@ -143,22 +143,30 @@ class StudentComment extends Component
         $this_intro = 'Introduction'.$thintro1;                       
         $intro_DB = Comment::inRandomOrder()->select($this_intro)->first();
 
+
         $thbeha1 = $this->beha1;
-        if ($thbeha1 == 0){  return $this->commentBEHA = '';     
-        }
-        else
-        $this_beha = 'Behavior'.$thbeha1;                       
+        $this_beha = 'Behavior'.$thbeha1;  
+                                     
         $beha_DB = Comment::inRandomOrder()->select($this_beha)->first();
+
+        $finals = [($intro_DB->$this_intro).' ', ($beha_DB->$this_beha).' '];
+        /* dd($finals[1]); */
             
         /* Ovo dole je crap trebalo bi complete u svim comments da zamenim 
         ovo a ne samo u intro imaj u VIDU!!!! */
-        $Intro_ctrl = str_replace('(name)',   $name_first, $intro_DB->$this_intro);     
-        $Intro_ctrl = str_replace('(he/she)', $gend_she_he,  $Intro_ctrl);
-        $Intro_ctrl = str_replace('HHH',      $gend_her_his, $Intro_ctrl);
-        $Intro_ctrl = str_replace('YYY',      $gend_him_her, $Intro_ctrl);
+
+        
+        $finals = str_replace('(name)',   $name_first, $finals);   
+        $finals = str_replace('(he/she)', $gend_she_he,  $finals);
+        $finals = str_replace('HHH',      $gend_her_his, $finals);
+        $finals = str_replace('YYY',      $gend_him_her, $finals);
+        
+        $finale = implode($finals);
 
         $spintax = new Spintax();
-        $spintax = $spintax->process($Intro_ctrl);
+
+        $spintaxWWW = $spintax->ucsentence($finale);
+        $spintax = $spintax->process($spintaxWWW);
 
         return $this->commentINT = $spintax;      
   
