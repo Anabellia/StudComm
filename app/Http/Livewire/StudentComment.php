@@ -114,14 +114,14 @@ class StudentComment extends Component
         $gender = $this->student->gender;
 
             if($gender == 'Male'){
-                $gend_him_her = 'him';  //YYY -> him
+                $gend_him_her = 'him';  //YYY -> him (him/her)
                 $gend_she_he = 'he';    //(he/she) -> he
-                $gend_her_his = 'his'; //HHH -> his 
+                $gend_her_his = 'his'; //HHH -> his (his/hers)
 
             }elseif($gender == 'Female'){
-                $gend_him_her = 'her';  //YYY -> her
+                $gend_him_her = 'her';  //YYY -> her  (him/her)
                 $gend_she_he = 'she';   //(he/she) -> she
-                $gend_her_his = 'hers'; //HHH -> her
+                $gend_her_his = 'hers'; //HHH -> her (his/hers)
                 //herself/himself -> hmmm ovo nisam koristio ali mozda budem
             }
 
