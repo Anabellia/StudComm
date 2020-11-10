@@ -13,7 +13,12 @@
             </fieldset>
         <button wire:click="newComment">Probam coment spintax sad</button><br><br>
         <!-- <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentINT) }}</p> -->
+        
         <p style="color:red;"> ggrade| {{$grade1}} |:{{ $commentINT }}</p>
+
+        <!-- /////////////////////////// -->
+            
+        <!-- /////////////////////////// -->
     </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -59,7 +64,7 @@
 
                     <!-- slider 0 GRADE IN GENERAL -->
                     <div>
-                    <div><label for="grade1" >GRADE your student in general from 1-5: {{$grade1}}</label></div>
+                    <div><label for="grade1" >GRADE your student in general from 1-3: {{$grade1}}</label></div>
                         <input type="range" name="grade" min="1" max="3" step="1" value="{{$student->grade}}" wire:model="grade1" />
                     </div><br>
                     

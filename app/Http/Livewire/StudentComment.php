@@ -102,13 +102,11 @@ class StudentComment extends Component
             $this->subj1 = (rand(0, 3) == 0 ? 0 :(($ssa = rand($ass-1, $ass + 1)) < 4 ? $ssa : 3));
             $this->conc1 = (rand(0, 3) == 0 ? 0 :(($ssa = rand($ass-1, $ass + 1)) < 4 ? $ssa : 3));   
 
-        }
-        
+        }        
 
     }
 
-    public $commentINT;    
-    public $commentBEHA;
+    public $commentINT;        
     
     public function newComment(){ 
         
@@ -135,21 +133,55 @@ class StudentComment extends Component
             $name_middle = trim(implode(' ', $wparts));  
 
         //////////////////////////////////////////////////////////////
-            //vrednost intro1 turim u thintro (this intro1)
+        //vrednost intro1 turim u thintro (this intro1)
+
         $thintro1 = $this->intro1;
-        if ($thintro1 == 0){  return $this->commentINT = '';     
-        }
-        else
         $this_intro = 'Introduction'.$thintro1;                       
         $intro_DB = Comment::inRandomOrder()->select($this_intro)->first();
 
-
         $thbeha1 = $this->beha1;
-        $this_beha = 'Behavior'.$thbeha1;  
-                                     
+        $this_beha = 'Behavior'.$thbeha1;                                      
         $beha_DB = Comment::inRandomOrder()->select($this_beha)->first();
+        
+        $thspeak1 = $this->speak1;
+        $this_speak = 'Speaking'.$thspeak1;                                      
+        $speak_DB = Comment::inRandomOrder()->select($this_speak)->first();
+            
+        $thread1 = $this->read1;
+        $this_read = 'Reading'.$thread1;                                      
+        $read_DB = Comment::inRandomOrder()->select($this_read)->first();
+        
+        $thwrit1 = $this->writ1;
+        $this_writ = 'Writing'.$thwrit1;                                      
+        $writ_DB = Comment::inRandomOrder()->select($this_writ)->first();
+        
+        $thlist1 = $this->list1;
+        $this_list = 'Listening'.$thlist1;                                      
+        $list_DB = Comment::inRandomOrder()->select($this_list)->first();
+        
+        $thcompr1 = $this->compr1;
+        $this_compr = 'Comprehension'.$thcompr1;                                      
+        $compr_DB = Comment::inRandomOrder()->select($this_compr)->first();
+        
+        $thsubj1 = $this->subj1;
+        $this_subj = 'Subject'.$thsubj1;                                      
+        $subj_DB = Comment::inRandomOrder()->select($this_subj)->first();        
 
-        $finals = [($intro_DB->$this_intro).' ', ($beha_DB->$this_beha).' '];
+        $thconc1 = $this->conc1;
+        $this_conc = 'Conclusion'.$thconc1;                                      
+        $conc_DB = Comment::inRandomOrder()->select($this_conc)->first();               
+        
+        $finals = [($intro_DB->$this_intro).' ', 
+                    ($beha_DB->$this_beha).' ', 
+                    ($speak_DB->$this_speak).' ',
+                    ($read_DB->$this_read).' ',
+                    ($writ_DB->$this_writ).' ',
+                    ($list_DB->$this_list).' ',
+                    ($compr_DB->$this_compr).' ',
+                    ($subj_DB->$this_subj).' ',
+                    ($conc_DB->$this_conc).' ',               
+                
+                ];
         /* dd($finals[1]); */
             
         /* Ovo dole je crap trebalo bi complete u svim comments da zamenim 
