@@ -188,10 +188,10 @@ class StudentComment extends Component
         ovo a ne samo u intro imaj u VIDU!!!! */
 
         
-        $finals = str_replace('(name)',   $name_first, $finals);   
-        $finals = str_replace('(he/she)', $gend_she_he,  $finals);
-        $finals = str_replace('HHH',      $gend_her_his, $finals);
-        $finals = str_replace('YYY',      $gend_him_her, $finals);
+        $finals = str_replace('(name)',     $name_first, $finals);   
+        $finals = str_replace('(he/she)',   $gend_she_he,  $finals);
+        $finals = str_replace('(his/hers)', $gend_her_his, $finals);
+        $finals = str_replace('(him/her)',  $gend_him_her, $finals);
         
         $finale = implode($finals);
 
