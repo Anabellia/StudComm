@@ -171,15 +171,15 @@ class StudentComment extends Component
         $this_conc = 'Conclusion'.$thconc1;                                      
         $conc_DB = Comment::inRandomOrder()->select($this_conc)->first();               
         
-        $finals = [($intro_DB->$this_intro).' ', 
-                    ($beha_DB->$this_beha).' ', 
+        $finals = [($intro_DB->$this_intro). ' ', 
+                    ($beha_DB->$this_beha).  ' ', 
                     ($speak_DB->$this_speak).' ',
-                    ($read_DB->$this_read).' ',
-                    ($writ_DB->$this_writ).' ',
-                    ($list_DB->$this_list).' ',
+                    ($read_DB->$this_read).  ' ',
+                    ($writ_DB->$this_writ).  ' ',
+                    ($list_DB->$this_list).  ' ',
                     ($compr_DB->$this_compr).' ',
-                    ($subj_DB->$this_subj).' ',
-                    ($conc_DB->$this_conc).' ',               
+                    ($subj_DB->$this_subj).  ' ',
+                    ($conc_DB->$this_conc).  ' ',               
                 
                 ];
         /* dd($finals[1]); */
@@ -190,7 +190,7 @@ class StudentComment extends Component
         
         $finals = str_replace('(name)',     $name_first, $finals);   
         $finals = str_replace('(he/she)',   $gend_she_he,  $finals);
-        $finals = str_replace('(his/hers)', $gend_her_his, $finals);
+        $finals = str_replace('(his/her)', $gend_her_his, $finals);
         $finals = str_replace('(him/her)',  $gend_him_her, $finals);
         
         $finale = implode($finals);
