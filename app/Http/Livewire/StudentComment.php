@@ -121,7 +121,7 @@ class StudentComment extends Component
             }elseif($gender == 'Female'){
                 $gend_him_her = 'her';  //YYY -> her  (him/her)
                 $gend_she_he = 'she';   //(he/she) -> she
-                $gend_her_his = 'hers'; //HHH -> her (his/hers)
+                $gend_her_his = 'her'; //HHH -> her (his/hers)
                 //herself/himself -> hmmm ovo nisam koristio ali mozda budem
             }
 
@@ -163,13 +163,21 @@ class StudentComment extends Component
         $this_compr = 'Comprehension'.$thcompr1;                                      
         $compr_DB = Comment::inRandomOrder()->select($this_compr)->first();
         
-        $thsubj1 = $this->subj1;
-        $this_subj = 'Subject'.$thsubj1;                                      
-        $subj_DB = Comment::inRandomOrder()->select($this_subj)->first();        
-
         $thconc1 = $this->conc1;
         $this_conc = 'Conclusion'.$thconc1;                                      
-        $conc_DB = Comment::inRandomOrder()->select($this_conc)->first();               
+        $conc_DB = Comment::inRandomOrder()->select($this_conc)->first();    
+        
+        /* Ovo nije subject sad nego ono na kraj random */
+        $thsubj1 = $this->subj1;
+        $this_subj = 'Subject'.$thsubj1;                                      
+        $subj_DB = Comment::inRandomOrder()->select($this_subj)->first();  
+        $rnd = $subj_DB->$this_subj;
+        /* Svaki treci ce biti ono se ya Francice!! */
+        $array = [$rnd, '', '']; 
+        $rand_capam =  $array[array_rand($array)];
+
+        
+        
         
         $finals = [($intro_DB->$this_intro). ' ', 
                     ($beha_DB->$this_beha).  ' ', 
@@ -177,9 +185,9 @@ class StudentComment extends Component
                     ($read_DB->$this_read).  ' ',
                     ($writ_DB->$this_writ).  ' ',
                     ($list_DB->$this_list).  ' ',
-                    ($compr_DB->$this_compr).' ',
-                    ($subj_DB->$this_subj).  ' ',
-                    ($conc_DB->$this_conc).  ' ',               
+                    ($compr_DB->$this_compr).' ',                    
+                    ($conc_DB->$this_conc).  ' ',     
+                    $rand_capam,          
                 
                 ];
         /* dd($finals[1]); */
