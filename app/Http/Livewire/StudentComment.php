@@ -169,13 +169,13 @@ class StudentComment extends Component
         $this_compr = 'Comprehension'.$thcompr1;  
         $this_compr_id = 'id';                                  
         $compr_DB = Comment::inRandomOrder()->select($this_compr, $this_compr_id)->first();
-          
+        dd($list_DB->$this_list.$list_DB->$this_list_id.$compr_DB->$this_compr.$compr_DB->$this_compr_id);
         
         $thconc1 = $this->conc1;
         $this_conc = 'Conclusion'.$thconc1;   
         $this_conc_id = 'id';                                   
-        $conc_DB = Comment::inRandomOrder()->select($this_conc, $this_conc_id)->first();    
-        $aha = $conc_DB->$this_conc_id;
+        $conc_DB = Comment::inRandomOrder()->select()->first();    
+        $aha = ($conc_DB->$this_conc_id);
         
         /* Ovo nije subject sad nego ono na kraj random */
         $thsubj1 = $this->subj1;
@@ -212,7 +212,7 @@ class StudentComment extends Component
                       $this_writ.'-[ '.($conc_DB->$this_writ_id).' ]. ',
                       $this_list.'-[ '.($conc_DB->$this_list_id).' ]. ',
                     $this_compr.'-[ '.($conc_DB->$this_compr_id).' ]. ',
-                      $this_conc.'-[ '.($aha).' ]. ',
+                      $this_conc.'-[ '.$aha.' ]. ',
                 
                 ];
         /* dd($finals[1]); */
