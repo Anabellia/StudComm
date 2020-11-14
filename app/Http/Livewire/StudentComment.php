@@ -136,36 +136,46 @@ class StudentComment extends Component
         //vrednost intro1 turim u thintro (this intro1)
 
         $thintro1 = $this->intro1;
-        $this_intro = 'Introduction'.$thintro1;                       
-        $intro_DB = Comment::inRandomOrder()->select($this_intro)->first();
+        $this_intro = 'Introduction'.$thintro1;       
+        $this_intro_id = 'id';                
+        $intro_DB = Comment::inRandomOrder()->select($this_intro, $this_intro_id)->first();
 
         $thbeha1 = $this->beha1;
-        $this_beha = 'Behavior'.$thbeha1;                                      
-        $beha_DB = Comment::inRandomOrder()->select($this_beha)->first();
+        $this_beha = 'Behavior'.$thbeha1;    
+        $this_beha_id = 'id';                                  
+        $beha_DB = Comment::inRandomOrder()->select($this_beha, $this_beha_id)->first();
         
         $thspeak1 = $this->speak1;
-        $this_speak = 'Speaking'.$thspeak1;                                      
-        $speak_DB = Comment::inRandomOrder()->select($this_speak)->first();
+        $this_speak = 'Speaking'.$thspeak1;   
+        $this_speak_id = 'id';                                   
+        $speak_DB = Comment::inRandomOrder()->select($this_speak, $this_speak_id)->first();
             
         $thread1 = $this->read1;
-        $this_read = 'Reading'.$thread1;                                      
-        $read_DB = Comment::inRandomOrder()->select($this_read)->first();
+        $this_read = 'Reading'.$thread1;   
+        $this_read_id = 'id';                                   
+        $read_DB = Comment::inRandomOrder()->select($this_read, $this_read_id)->first();
         
         $thwrit1 = $this->writ1;
-        $this_writ = 'Writing'.$thwrit1;                                      
-        $writ_DB = Comment::inRandomOrder()->select($this_writ)->first();
+        $this_writ = 'Writing'.$thwrit1;  
+        $this_writ_id = 'id';                                    
+        $writ_DB = Comment::inRandomOrder()->select($this_writ, $this_writ_id)->first();
         
         $thlist1 = $this->list1;
-        $this_list = 'Listening'.$thlist1;                                      
-        $list_DB = Comment::inRandomOrder()->select($this_list)->first();
+        $this_list = 'Listening'.$thlist1;         
+        $this_list_id = 'id';                             
+        $list_DB = Comment::inRandomOrder()->select($this_list, $this_list_id)->first();
         
         $thcompr1 = $this->compr1;
-        $this_compr = 'Comprehension'.$thcompr1;                                      
-        $compr_DB = Comment::inRandomOrder()->select($this_compr)->first();
+        $this_compr = 'Comprehension'.$thcompr1;  
+        $this_compr_id = 'id';                                  
+        $compr_DB = Comment::inRandomOrder()->select($this_compr, $this_compr_id)->first();
+          
         
         $thconc1 = $this->conc1;
-        $this_conc = 'Conclusion'.$thconc1;                                      
-        $conc_DB = Comment::inRandomOrder()->select($this_conc)->first();    
+        $this_conc = 'Conclusion'.$thconc1;   
+        $this_conc_id = 'id';                                   
+        $conc_DB = Comment::inRandomOrder()->select($this_conc, $this_conc_id)->first();    
+        $aha = $conc_DB->$this_conc_id;
         
         /* Ovo nije subject sad nego ono na kraj random */
         $thsubj1 = $this->subj1;
@@ -176,18 +186,33 @@ class StudentComment extends Component
         $array = [$rnd, '', '']; 
         $rand_capam =  $array[array_rand($array)];
 
-        
-        
-        
-        $finals = [($intro_DB->$this_intro). ' ', 
+        /* Kad odradish malo gramar fix ovako treba da izgleda clean */
+        /* $finals = [($intro_DB->$this_intro). ' ', 
                     ($beha_DB->$this_beha).  ' ', 
                     ($speak_DB->$this_speak).' ',
                     ($read_DB->$this_read).  ' ',
                     ($writ_DB->$this_writ).  ' ',
                     ($list_DB->$this_list).  ' ',
+                    ($compr_DB->$this_compr).' ',  */
+        
+        
+        $finals = [($intro_DB->$this_intro). ' ', 
+                  ($beha_DB->$this_beha).  ' ', 
+                    ($speak_DB->$this_speak).' ',
+                  ($read_DB->$this_read).  ' ',
+                  ($writ_DB->$this_writ).  ' ',
+                  ($list_DB->$this_list).  ' ',
                     ($compr_DB->$this_compr).' ',                    
-                    ($conc_DB->$this_conc).  ' ',     
-                    $rand_capam,          
+                  ($conc_DB->$this_conc).  ' ',     
+                    $rand_capam,        
+                    
+                    $this_beha.'-[ '.($conc_DB->$this_beha_id).' ]. ',
+                    $this_speak.'-[ '.($conc_DB->$this_speak_id).' ]. ',
+                      $this_read.'-[ '.($conc_DB->$this_read_id).' ]. ',
+                      $this_writ.'-[ '.($conc_DB->$this_writ_id).' ]. ',
+                      $this_list.'-[ '.($conc_DB->$this_list_id).' ]. ',
+                    $this_compr.'-[ '.($conc_DB->$this_compr_id).' ]. ',
+                      $this_conc.'-[ '.($aha).' ]. ',
                 
                 ];
         /* dd($finals[1]); */

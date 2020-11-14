@@ -7,7 +7,7 @@
                 <p>
                   <label></label>
                   <textarea id = "myTextArea"
-                          rows = "3"
+                          rows = "15"
                           cols = "80">{{ $commentINT }}</textarea>
                 </p>
             </fieldset>
