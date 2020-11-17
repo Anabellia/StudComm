@@ -1,18 +1,24 @@
 <div>
 
     <div style="text-align: center">
-    <fieldset>
-        <legend>Comment: </legend>
-        
-        <p>
-          <label></label>
-          <textarea id = "myTextArea"
-                  rows = "3"
-                  cols = "80">{{ (new App\Models\Spintax)->process($commentINT) }}</textarea>
-        </p>
-      </fieldset>
+            <fieldset>
+                <legend>Comment: </legend>
+
+                <p>
+                  <label></label>
+                  <textarea id = "myTextArea"
+                          rows = "15"
+                          cols = "80">{{ $commentINT }}</textarea>
+                </p>
+            </fieldset>
         <button wire:click="newComment">Probam coment spintax sad</button><br><br>
-        <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentINT) }}</p>
+        <!-- <p style="color:red;"> ggrade| {{$grade1}} |:{{ (new App\Models\Spintax)->process($commentINT) }}</p> -->
+        
+        <p style="color:red;"> ggrade| {{$grade1}} |:{{ $commentINT }}</p>
+
+        <!-- /////////////////////////// -->
+            
+        <!-- /////////////////////////// -->
     </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -58,7 +64,7 @@
 
                     <!-- slider 0 GRADE IN GENERAL -->
                     <div>
-                    <div><label for="grade1" >GRADE your student in general from 1-5: {{$grade1}}</label></div>
+                    <div><label for="grade1" >GRADE your student in general from 1-3: {{$grade1}}</label></div>
                         <input type="range" name="grade" min="1" max="3" step="1" value="{{$student->grade}}" wire:model="grade1" />
                     </div><br>
                     
@@ -67,7 +73,7 @@
                     
                     
                         <label style=@if($intro1 == 0) "color:red;" @endif for="intro1" >Introduction: {{$intro1}}</label>
-                        <input type="range" name="Introduction" min="0" max="3" step="1" value="{{$student->Introduction}}" wire:model="intro1" />
+                        <input wire:model="intro1" type="range" name="Introduction" min="0" max="3" step="1" value="{{$student->Introduction}}"/>
                     </div><br>
 
                     <!--(Behavior petljaus) -->
@@ -76,12 +82,14 @@
                         <input type="range" name="Behavior" min="0" max="3" step="1" value="{{$student->Behavior}}" wire:model="beha1" />
                     </div><br>
 
-                    <!-- /////////////////////////////////////// -->
-                    <!-- sad cu sa ovim da probam napravim child -->
-                    @livewire('speaking-comment', ['noName' => $noName, 'student' => $student, 'speak1' => $speak1, 'grade1' => $grade1])
-            	    <!--Student Speaking  -->
                     
-        
+                    <!--Student Speaking  -->
+                    <div>
+                        <label for="speak1" >Speaking: {{$speak1}}</label>
+                        <input wire:model="speak1" type="range" name="Speaking" min="0" max="3" step="1" value="{{$student->Speaking}}"/>
+                    </div><br>                  
+            	    
+                            
             	    <!-- slider  for Reading-->
                     <div>
                         <label for="read1" >Reading: {{$read1}}</label>
