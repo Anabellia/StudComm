@@ -169,7 +169,7 @@ class StudentComment extends Component
         $this_compr = 'Comprehension'.$thcompr1;  
         $this_compr_id = 'id';                                  
         $compr_DB = Comment::inRandomOrder()->select($this_compr, $this_compr_id)->first();
-        dd($list_DB->$this_list.$list_DB->$this_list_id.$compr_DB->$this_compr.$compr_DB->$this_compr_id);
+        //dd($list_DB->$this_list.$list_DB->$this_list_id.$compr_DB->$this_compr.$compr_DB->$this_compr_id);
         
         $thconc1 = $this->conc1;
         $this_conc = 'Conclusion'.$thconc1;   
